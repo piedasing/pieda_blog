@@ -1,172 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<!-- Head tag -->
 <head><meta name="generator" content="Hexo 3.8.0">
-
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <!--Description-->
-    
-        <meta name="description" content="使用到的工具、套件、技術node js 、 vue-cli 、 vue 、 async/await、 promise、 exif
-來源
-此為觀看 Alex宅幹嘛 youtube直播後的學習紀錄Youtube: https://www.youtube.com/watch?v=hl_PotclEII&amp;a">
-    
-
-    <!--Author-->
-    
-        <meta name="author" content="pieda">
-    
-
-    <!--Open Graph Title-->
-    
-        <meta property="og:title" content="EXIF">
-    
-
-    <!--Open Graph Description-->
-    
-
-    <!--Open Graph Site Name-->
-    <meta property="og:site_name" content="pieda 技術記錄部落格">
-
-    <!--Type page-->
-    
-        <meta property="og:type" content="article">
-    
-
-    <!--Page Cover-->
-    
-
-    <meta name="twitter:card" content="summary">
-    
-
-    <!-- Title -->
-    
-    <title>EXIF - pieda 技術記錄部落格</title>
-
-    <!-- Bootstrap Core CSS -->
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css" integrity="sha384-y3tfxAZXuh4HwSYylfB+J125MxIs6mR5FOHamPBG064zB+AFeWH94NdvaCBm8qnd" crossorigin="anonymous">
-
-    <!-- Custom Fonts -->
-    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-        <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
-
-    <!-- Gallery -->
-    <link href="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.css" type="text/css" rel="stylesheet">
-
-    <!-- Custom CSS -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>
+        pieda 技術記錄部落格
+    </title>
     <link rel="stylesheet" href="/pieda_blog/css/style.css">
-
-    <!-- Google Analytics -->
-    
-
-
+    <link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico">
+    <link rel="stylesheet" href="/css/style/github.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <script src="/js/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
 </head>
 
-
 <body>
-
-<div class="bg-gradient"></div>
-<div class="bg-pattern"></div>
-
-<!-- Menu -->
-<!--Menu Links and Overlay-->
-<div class="menu-bg">
-    <div class="menu-container">
-        <ul>
+    <div class="container">
+        <div class="header">
+    <div class="logo">
+        <a href="/pieda_blog/">pieda 技術記錄部落格</a>
+    </div>
+    <div class="nav">
+        <ul class="menu">
             
-            <li class="menu-item">
-                <a href="/pieda_blog/">
-                    Home
-                </a>
-            </li>
+                <li class="menu-item">
+                    <a href="/pieda_blog/" class="menu-item-link">
+                        Home
+                    </a>
+                </li>
             
-            <li class="menu-item">
-                <a href="/pieda_blog/archives">
-                    Archives
-                </a>
-            </li>
+                <li class="menu-item">
+                    <a href="/pieda_blog/archives" class="menu-item-link">
+                        Archives
+                    </a>
+                </li>
             
-            <li class="menu-item">
-                <a href="/pieda_blog/about.html">
-                    About
-                </a>
-            </li>
-            
-            <li class="menu-item">
-                <a href="/pieda_blog/tags">
-                    Tags
-                </a>
-            </li>
-            
-            <li class="menu-item">
-                <a href="/pieda_blog/categories">
-                    Categories
-                </a>
-            </li>
-            
-            <li class="menu-item">
-                <a href="/pieda_blog/contact.html">
-                    Contact
-                </a>
-            </li>
-            
+                <li class="menu-item">
+                    <a href="https://github.com/loveminimal" class="menu-item-link">
+                        Github
+                    </a>
+                </li>
+                
         </ul>
     </div>
 </div>
-
-<!--Hamburger Icon-->
-<nav>
-    <a href="#menu"></a>
-</nav>
-
-<div class="container">
-
-    <!-- Main Content -->
-    <div class="row">
-    <div class="col-sm-12">
-
-        <!--Title and Logo-->
-        <header>
-    <div class="logo">
-        <a href="/pieda_blog/"><i class="logo-icon fa fa-cube" aria-hidden="true"></i></a>
-        
+        <div class="article">
+    <div class="article-title">
+        <h2>
+            exif
+        </h2>
     </div>
-</header>
-
-        <section class="main">
-            
-<div class="post">
-
-    <div class="post-header">
-        <h1 class="title">
-            <a href="/pieda_blog/2019/02/19/exif/">
-                EXIF
-            </a>
-        </h1>
-        <div class="post-info">
-            
-                <span class="date">2019-02-19</span>
-            
-            
-            
+    <div class="article-meta">
+        <div class="article-date">
+            2019-02-19
         </div>
     </div>
-
-    <div class="content">
-
-        <!-- Gallery -->
-        
-
-        <!-- Post Content -->
+    <div class="article-content">
         <h3 id="使用到的工具、套件、技術"><a href="#使用到的工具、套件、技術" class="headerlink" title="使用到的工具、套件、技術"></a>使用到的工具、套件、技術</h3><p><em>node js</em> 、 <em>vue-cli</em> 、 <em>vue</em> 、 <em>async/await</em>、 <em>promise</em>、 <em>exif</em></p>
 <h3 id="來源"><a href="#來源" class="headerlink" title="來源"></a>來源</h3><blockquote>
 <p><em>此為觀看 Alex宅幹嘛 youtube直播後的學習紀錄</em><br>Youtube: <a href="https://www.youtube.com/watch?v=hl_PotclEII&amp;t=27s" target="_blank" rel="noopener">https://www.youtube.com/watch?v=hl_PotclEII&amp;t=27s</a></p>
@@ -262,175 +152,13 @@
 <h5 id="ImageInput-vue"><a href="#ImageInput-vue" class="headerlink" title="ImageInput.vue :"></a>ImageInput.vue :</h5><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;input</span><br><span class="line">    type=<span class="string">"file"</span></span><br><span class="line">    accept=<span class="string">"image/*"</span></span><br><span class="line">    :id=<span class="string">"id"</span></span><br><span class="line">    @change=<span class="string">"onFileUpload"</span></span><br><span class="line">  /&gt;</span><br><span class="line">&lt;<span class="regexp">/template&gt;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">&lt;script&gt;</span></span><br><span class="line"><span class="regexp">import EXIF from 'exif-js'</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">export default &#123;</span></span><br><span class="line"><span class="regexp">  name: 'ImageInput',</span></span><br><span class="line"><span class="regexp">  props: &#123;</span></span><br><span class="line"><span class="regexp">    id: &#123;</span></span><br><span class="line"><span class="regexp">      type: String,</span></span><br><span class="line"><span class="regexp">      required: true</span></span><br><span class="line"><span class="regexp">    &#125;</span></span><br><span class="line"><span class="regexp">  &#125;,</span></span><br><span class="line"><span class="regexp">  methods: &#123;</span></span><br><span class="line"><span class="regexp">    async onFileUpload(e) &#123;</span></span><br><span class="line"><span class="regexp">      const file = e.target.files[0] /</span><span class="regexp">/ 抓出上傳的檔案</span></span><br><span class="line"><span class="regexp">      try &#123;</span></span><br><span class="line"><span class="regexp">        /</span>*** 程式流程</span><br><span class="line">        *** 從input上傳檔案 -&gt; 讀出圖片 -&gt; 抓出exif -&gt; 放進畫布旋轉後，轉存成base64</span><br><span class="line">        ***<span class="regexp">/</span></span><br><span class="line"><span class="regexp">        let src = await this.loadFile(file) /</span><span class="regexp">/ 讀出檔案內的圖片路徑</span></span><br><span class="line"><span class="regexp">        const img = await this.loadImage(src) /</span><span class="regexp">/ 從路徑讀出圖片</span></span><br><span class="line"><span class="regexp">        let exif = await this.loadEXIF(img) /</span><span class="regexp">/ 抓出exif</span></span><br><span class="line"><span class="regexp">        if (!exif) &#123;</span></span><br><span class="line"><span class="regexp">          exif = 1</span></span><br><span class="line"><span class="regexp">        &#125;</span></span><br><span class="line"><span class="regexp">        console.log('exif: ', exif)</span></span><br><span class="line"><span class="regexp">        if (exif !== 1) &#123;</span></span><br><span class="line"><span class="regexp">          const rotatedSrc = this.getBase64(img, exif) /</span><span class="regexp">/ 旋轉後，轉存成base64</span></span><br><span class="line"><span class="regexp">          src = rotatedSrc /</span><span class="regexp">/ 旋轉完成的圖片路徑(base64)</span></span><br><span class="line"><span class="regexp">        &#125;</span></span><br><span class="line"><span class="regexp">        this.$emit('completed', src) /</span><span class="regexp">/ 回傳給父元件結果</span></span><br><span class="line"><span class="regexp">      &#125; catch (error) &#123;</span></span><br><span class="line"><span class="regexp">        console.log(error)</span></span><br><span class="line"><span class="regexp">      &#125;</span></span><br><span class="line"><span class="regexp">    &#125;,</span></span><br><span class="line"><span class="regexp">    loadFile(file) &#123;</span></span><br><span class="line"><span class="regexp">      return new Promise((resolve, reject) =&gt; &#123;</span></span><br><span class="line"><span class="regexp">        const reader = new FileReader()</span></span><br><span class="line"><span class="regexp">        reader.onload = () =&gt; resolve(reader.result)</span></span><br><span class="line"><span class="regexp">        reader.onerror = reject</span></span><br><span class="line"><span class="regexp">        reader.readAsDataURL(file)</span></span><br><span class="line"><span class="regexp">      &#125;)</span></span><br><span class="line"><span class="regexp">    &#125;,</span></span><br><span class="line"><span class="regexp">    loadImage(src) &#123;</span></span><br><span class="line"><span class="regexp">      return new Promise((resolve, reject) =&gt; &#123;</span></span><br><span class="line"><span class="regexp">        const image = new Image()</span></span><br><span class="line"><span class="regexp">        image.onload = () =&gt; resolve(image)</span></span><br><span class="line"><span class="regexp">        image.onerror = reject</span></span><br><span class="line"><span class="regexp">        image.src = src</span></span><br><span class="line"><span class="regexp">      &#125;)</span></span><br><span class="line"><span class="regexp">    &#125;,</span></span><br><span class="line"><span class="regexp">    loadEXIF(img) &#123;</span></span><br><span class="line"><span class="regexp">      return new Promise((resolve, reject) =&gt; &#123;</span></span><br><span class="line"><span class="regexp">        EXIF.getData(img, function() &#123;</span></span><br><span class="line"><span class="regexp">          const tags = EXIF.getAllTags(this)</span></span><br><span class="line"><span class="regexp">          const exif = tags.Orientation</span></span><br><span class="line"><span class="regexp">          console.log('exif: ', exif)</span></span><br><span class="line"><span class="regexp">          resolve(exif)</span></span><br><span class="line"><span class="regexp">        &#125;)</span></span><br><span class="line"><span class="regexp">      &#125;)</span></span><br><span class="line"><span class="regexp">    &#125;,</span></span><br><span class="line"><span class="regexp">    getBase64(img, rotate) &#123;</span></span><br><span class="line"><span class="regexp">      const canvas = document.createElement('canvas')</span></span><br><span class="line"><span class="regexp">      const ctx = canvas.getContext('2d')</span></span><br><span class="line"><span class="regexp">      let &#123; width, height &#125; = img</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">      let scale = width &gt; height ? 800 /</span> width : <span class="number">800</span> / height</span><br><span class="line">      <span class="keyword">if</span> (scale &gt; <span class="number">1</span>) &#123;</span><br><span class="line">        scale = <span class="number">1</span></span><br><span class="line">      &#125;</span><br><span class="line"></span><br><span class="line">      <span class="keyword">let</span> dw = width * scale</span><br><span class="line">      <span class="keyword">let</span> dh = height * scale</span><br><span class="line"></span><br><span class="line">      canvas.width = rotate &gt; <span class="number">4</span> ? dh : dw</span><br><span class="line">      canvas.height = rotate &gt; <span class="number">4</span> ? dw : dh</span><br><span class="line"></span><br><span class="line">      <span class="keyword">let</span> x = canvas.width / <span class="number">2</span></span><br><span class="line">      <span class="keyword">let</span> y = canvas.height / <span class="number">2</span></span><br><span class="line"></span><br><span class="line">      ctx.translate(x, y) <span class="comment">// 正中心</span></span><br><span class="line"></span><br><span class="line">      <span class="keyword">switch</span> (rotate) &#123;</span><br><span class="line">        <span class="keyword">case</span> <span class="number">2</span>:</span><br><span class="line">        <span class="keyword">case</span> <span class="number">4</span>:</span><br><span class="line">        <span class="keyword">case</span> <span class="number">5</span>:</span><br><span class="line">        <span class="keyword">case</span> <span class="number">7</span>:</span><br><span class="line">          ctx.scale(<span class="number">-1</span>, <span class="number">1</span>) <span class="comment">// 鏡向</span></span><br><span class="line">          <span class="keyword">break</span></span><br><span class="line">      &#125;</span><br><span class="line">      <span class="comment">// 旋轉圖片</span></span><br><span class="line">      <span class="keyword">switch</span> (rotate) &#123;</span><br><span class="line">        <span class="keyword">case</span> <span class="number">3</span>:</span><br><span class="line">        <span class="keyword">case</span> <span class="number">4</span>:</span><br><span class="line">          ctx.rotate(<span class="number">180</span> * (<span class="built_in">Math</span>.PI / <span class="number">180</span>))</span><br><span class="line">          <span class="keyword">break</span></span><br><span class="line">        <span class="keyword">case</span> <span class="number">5</span>:</span><br><span class="line">        <span class="keyword">case</span> <span class="number">6</span>:</span><br><span class="line">          ctx.rotate(<span class="number">90</span> * (<span class="built_in">Math</span>.PI / <span class="number">180</span>))</span><br><span class="line">          <span class="keyword">break</span></span><br><span class="line">        <span class="keyword">case</span> <span class="number">7</span>:</span><br><span class="line">        <span class="keyword">case</span> <span class="number">8</span>:</span><br><span class="line">          ctx.rotate(<span class="number">-90</span> * (<span class="built_in">Math</span>.PI / <span class="number">180</span>))</span><br><span class="line">          <span class="keyword">break</span></span><br><span class="line">      &#125;</span><br><span class="line">      <span class="keyword">if</span> (rotate &gt; <span class="number">4</span>) &#123; <span class="comment">// 寬高互換</span></span><br><span class="line">        ;[x, y] = [y, x]</span><br><span class="line">      &#125;</span><br><span class="line">      ctx.drawImage(img, -x, -y, dw, dh) <span class="comment">// 將旋轉後的圖片畫出來</span></span><br><span class="line"></span><br><span class="line">      <span class="keyword">return</span> canvas.toDataURL() <span class="comment">// 回傳base64</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">&lt;<span class="regexp">/script&gt;</span></span><br></pre></td></tr></table></figure>
 
     </div>
-
-    
-
-    
-
-    <!-- Comments -->
-    
-
 </div>
-        </section>
-
-    </div>
+        <div class="footer">
+    <a href="#">
+        2018 <i class="fab fa-studiovinari"></i> pieda <i class="fas fa-angle-double-up"></i>
+    </a>
 </div>
-
-
-</div>
-
-<!-- Footer -->
-<div class="push"></div>
-
-<footer class="footer-content">
-    <div class="container">
-        <div class="row">
-            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 footer-about">
-                <h2>About</h2>
-                <p>
-                    This theme was developed by <a href="https://github.com/klugjo">Jonathan Klughertz</a>. The source code is available on Github. Create Websites. Make Magic.
-                </p>
-            </div>
-            
-    <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 recent-posts">
-        <h2>Recent Posts</h2>
-        <ul>
-            
-            <li>
-                <a class="footer-post" href="/pieda_blog/2019/02/19/exif/">EXIF</a>
-            </li>
-            
-        </ul>
     </div>
-
-
-
-            
-        </div>
-        <div class="row">
-            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                <ul class="list-inline footer-social-icons">
-                    
-                    <li class="list-inline-item">
-                        <a href="https://github.com/klugjo/hexo-theme-alpha-dust">
-                            <span class="footer-icon-container">
-                                <i class="fa fa-github"></i>
-                            </span>
-                        </a>
-                    </li>
-                    
-                    
-                    <li class="list-inline-item">
-                        <a href="https://twitter.com/?lang=en">
-                            <span class="footer-icon-container">
-                                <i class="fa fa-twitter"></i>
-                            </span>
-                        </a>
-                    </li>
-                    
-                    
-                    <li class="list-inline-item">
-                        <a href="https://www.facebook.com/">
-                            <span class="footer-icon-container">
-                                <i class="fa fa-facebook"></i>
-                            </span>
-                        </a>
-                    </li>
-                    
-                    
-                    <li class="list-inline-item">
-                        <a href="https://www.instagram.com/">
-                            <span class="footer-icon-container">
-                                <i class="fa fa-instagram"></i>
-                            </span>
-                        </a>
-                    </li>
-                    
-                    
-                    <li class="list-inline-item">
-                        <a href="https://dribbble.com/">
-                            <span class="footer-icon-container">
-                                <i class="fa fa-dribbble"></i>
-                            </span>
-                        </a>
-                    </li>
-                    
-                    
-                    <li class="list-inline-item">
-                        <a href="https://plus.google.com/">
-                            <span class="footer-icon-container">
-                                <i class="fa fa-google-plus"></i>
-                            </span>
-                        </a>
-                    </li>
-                    
-                    
-                    <li class="list-inline-item">
-                        <a href="https://www.behance.net/">
-                            <span class="footer-icon-container">
-                                <i class="fa fa-behance"></i>
-                            </span>
-                        </a>
-                    </li>
-                    
-                    
-                    <li class="list-inline-item">
-                        <a href="https://500px.com/">
-                            <span class="footer-icon-container">
-                                <i class="fa fa-500px"></i>
-                            </span>
-                        </a>
-                    </li>
-                    
-                    
-                    <li class="list-inline-item">
-                        <a href="mailto:test@example.com">
-                            <span class="footer-icon-container">
-                                <i class="fa fa-envelope-o"></i>
-                            </span>
-                        </a>
-                    </li>
-                    
-                    
-                    <li class="list-inline-item">
-                        <a href="\#">
-                            <span class="footer-icon-container">
-                                <i class="fa fa-rss"></i>
-                            </span>
-                        </a>
-                    </li>
-                    
-                </ul>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                <div class="footer-copyright">
-                    @Untitled. All right reserved | Design & Hexo <a href="http://www.codeblocq.com/">Jonathan Klughertz</a>
-                </div>
-            </div>
-        </div>
-    </div>
-</footer>
-
-<!-- After footer scripts -->
-
-<!-- jQuery -->
-<script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
-
-<!-- Tween Max -->
-<script src="//cdnjs.cloudflare.com/ajax/libs/gsap/1.18.5/TweenMax.min.js"></script>
-
-<!-- Gallery -->
-<script src="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
-
-<!-- Custom JavaScript -->
-<script src="/pieda_blog/js/main.js"></script>
-
-<!-- Disqus Comments -->
-
-
-
 </body>
 
 </html>
