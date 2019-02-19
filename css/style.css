@@ -228,3 +228,7 @@ h5:before {
 .gutter > pre {
   margin-right: 1rem;
 }
+.code {
+  background-color: #eee;
+  border-radius: 10px;
+}
