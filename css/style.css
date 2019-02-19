@@ -225,3 +225,6 @@ h5:before {
 .page-nav .page-number {
   margin: 0 1%;
 }
+.gutter > pre {
+  margin-right: 1rem;
+}
