@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head><meta name="generator" content="Hexo 3.8.0">
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--Description-->
+    
+        <meta name="description" content="相關工具、套件、技術gulp、browser-sync、gulp-rename、SASS/SCSS、gulp-autoprefixer
+目的
+為求開發時，簡化重複的流程、建立一個良好的本機開發環境
+
+步驟
+安裝 node js
+https://nodejs.org/en/
+
+
+安裝全域 gulp
+1">
+    
+
+    <!--Author-->
+    
+        <meta name="author" content="pieda">
+    
+
+    <!--Open Graph Title-->
+    
+        <meta property="og:title" content="gulp 前端自動化">
+    
+
+    <!--Open Graph Description-->
+    
+
+    <!--Open Graph Site Name-->
+    <meta property="og:site_name" content="pieda">
+
+    <!--Type page-->
+    
+        <meta property="og:type" content="article">
+    
+
+    <!--Page Cover-->
+    
+
+    <meta name="twitter:card" content="summary">
+    
+
+    <!-- Title -->
+    
+    <title>gulp 前端自動化 - pieda</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css" integrity="sha384-y3tfxAZXuh4HwSYylfB+J125MxIs6mR5FOHamPBG064zB+AFeWH94NdvaCBm8qnd" crossorigin="anonymous">
+
+    <!-- Custom Fonts -->
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Gallery -->
+    <link href="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.css" type="text/css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/pieda_blog/css/style.css">
+
+    <!-- Google Analytics -->
+    
+
+
+</head>
+
+
+<body>
+
+<div class="bg-gradient"></div>
+<div class="bg-pattern"></div>
+
+<!-- Menu -->
+<!--Menu Links and Overlay-->
+<div class="menu-bg">
+    <div class="menu-container">
+        <ul>
+            
+            <li class="menu-item">
+                <a href="/pieda_blog/">
+                    Home
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+</div>
+
+<!--Hamburger Icon-->
+<nav>
+    <a href="#menu"></a>
+</nav>
+
+<div class="container">
+
+    <!-- Main Content -->
+    <div class="row">
+    <div class="col-sm-12">
+
+        <!--Title and Logo-->
+        <header>
+    <div class="logo">
+        <a href="/pieda_blog/"><i class="logo-icon fa fa-cube" aria-hidden="true"></i></a>
+        
+    </div>
+</header>
+
+        <section class="main">
+            
+<div class="post">
+
+    <div class="post-header">
+        <h1 class="title">
+            <a href="/pieda_blog/2019/02/18/gulp/">
+                gulp 前端自動化
+            </a>
+        </h1>
+        <div class="post-info">
+            
+                <span class="date">2019-02-18</span>
+            
+            
+            
+        </div>
+    </div>
+
+    <div class="content">
+
+        <!-- Gallery -->
+        
+
+        <!-- Post Content -->
+        <h3 id="相關工具、套件、技術"><a href="#相關工具、套件、技術" class="headerlink" title="相關工具、套件、技術"></a>相關工具、套件、技術</h3><p><em>gulp、browser-sync、gulp-rename、SASS/SCSS、gulp-autoprefixer</em></p>
+<h3 id="目的"><a href="#目的" class="headerlink" title="目的"></a>目的</h3><blockquote>
+<p>為求開發時，簡化重複的流程、建立一個良好的本機開發環境</p>
+</blockquote>
+<h3 id="步驟"><a href="#步驟" class="headerlink" title="步驟"></a>步驟</h3><ol>
+<li>安裝 node js<blockquote>
+<p><a href="https://nodejs.org/en/" target="_blank" rel="noopener">https://nodejs.org/en/</a></p>
+</blockquote>
+</li>
+<li><p>安裝全域 gulp</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g gulp</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>初始化專案，產生 package.json</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm init</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>安裝本地所需套件</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">// 安裝本地 gulp</span><br><span class="line">npm install gulp --save</span><br><span class="line"></span><br><span class="line">// 安裝 sass 及 自動補前綴樣式的套件</span><br><span class="line">npm install gulp-sass gulp-autoprefixer --save</span><br><span class="line"></span><br><span class="line">// 安裝重新命名的套件</span><br><span class="line">npm install gulp-rename --save</span><br><span class="line"></span><br><span class="line">// 安裝建立本機伺服器及自動重整瀏覽器用的套件</span><br><span class="line">npm install browser-sync --save</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>在根目錄新增 gulpfile.js</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> gulp = <span class="built_in">require</span>(<span class="string">'gulp'</span>);</span><br><span class="line"><span class="keyword">var</span> sass = <span class="built_in">require</span>(<span class="string">'gulp-sass'</span>);</span><br><span class="line"><span class="keyword">var</span> cleanCss = <span class="built_in">require</span>(<span class="string">'gulp-clean-css'</span>);</span><br><span class="line"><span class="keyword">var</span> prefix = <span class="built_in">require</span>(<span class="string">'gulp-autoprefixer'</span>);</span><br><span class="line"><span class="keyword">var</span> browserSync = <span class="built_in">require</span>(<span class="string">'browser-sync'</span>);</span><br><span class="line"><span class="keyword">var</span> rename = <span class="built_in">require</span>(<span class="string">'gulp-rename'</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> scss = &#123;</span><br><span class="line">  output: &#123;</span><br><span class="line">    outputStyle: <span class="string">'expanded'</span></span><br><span class="line">    <span class="comment">// outputStyle: 'compressed'</span></span><br><span class="line">  &#125;,</span><br><span class="line">  prefix: &#123;</span><br><span class="line">    browsers: [<span class="string">'last 2 versions'</span>]</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> minify = &#123;</span><br><span class="line">  compatibility: <span class="string">'ie8'</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">gulp.task(<span class="string">'scss'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  gulp.src(<span class="string">'scss/style.scss'</span>) <span class="comment">// 來源檔案</span></span><br><span class="line">    .pipe(sass(scss.output)) <span class="comment">// 將scss編譯成css</span></span><br><span class="line">    .pipe(prefix(scss.prefix)) <span class="comment">// prefix()加入樣式前綴，()內不加屬性則使用autoprefix的預設值</span></span><br><span class="line">    .pipe(gulp.dest(<span class="string">'./style'</span>)) <span class="comment">// 輸出位置</span></span><br><span class="line">    .pipe(rename(<span class="string">'style.min.css'</span>)) <span class="comment">// 重新命名css</span></span><br><span class="line">    .pipe(cleanCss(minify)) <span class="comment">// 壓縮css</span></span><br><span class="line">    .pipe(gulp.dest(<span class="string">'./style'</span>)) <span class="comment">// 輸出位置</span></span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">gulp.task(<span class="string">'browser-sync'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123; <span class="comment">// 建立localhost伺服器</span></span><br><span class="line">  browserSync.init([<span class="string">"style/*.css"</span>, <span class="string">"js/*.js"</span>], &#123;</span><br><span class="line">    server: &#123;</span><br><span class="line">      baseDir: <span class="string">"./"</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">gulp.task(<span class="string">'watch'</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123; <span class="comment">// 存檔就刷新瀏覽器</span></span><br><span class="line">  gulp.watch(<span class="string">"scss/*.scss"</span>, [<span class="string">'scss'</span>]).on(<span class="string">'change'</span>, browserSync.reload);</span><br><span class="line">  gulp.watch(<span class="string">"./*.html"</span>).on(<span class="string">'change'</span>, browserSync.reload);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">gulp.task(<span class="string">'default'</span>, [<span class="string">'watch'</span>, <span class="string">'scss'</span>, <span class="string">'browser-sync'</span>]);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>在根目錄新增 index.html 及 scss 資料夾內新增 style.scss</p>
+<blockquote>
+</blockquote>
+<p>   gulp-demo(根目錄)<br>   |–scss<br>   &nbsp;&nbsp;|– style.scss<br>   |– gulpfile.js<br>   |– index.html<br>   |– package-lock.json<br>   |– package.json</p>
+<blockquote>
+</blockquote>
+</li>
+<li><p>執行 gulp，啟動伺服器</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gulp</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>開發網頁GO~</p>
+<blockquote>
+<p>當在 index.html 或是 style.scss 內有變更時(存檔)，瀏覽器會自動刷新<br>如果要停止伺服器，則按下 ctrl + c (mac 的 ctrl 改為 cmd)</p>
+</blockquote>
+</li>
+</ol>
+
+    </div>
+
+    
+
+    
+        <div class="post-tags">
+            <i class="fa fa-tags" aria-hidden="true"></i>
+            <a href="/pieda_blog/tags/gulp、browser-sync、gulp-rename、SASS-SCSS、gulp-autoprefixer/">#gulp、browser-sync、gulp-rename、SASS/SCSS、gulp-autoprefixer</a>
+        </div>
+    
+
+    <!-- Comments -->
+    
+
+</div>
+        </section>
+
+    </div>
+</div>
+
+
+</div>
+
+<!-- Footer -->
+<div class="push"></div>
+
+<footer class="footer-content">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 footer-about">
+                <h2>About</h2>
+                <p>
+                    
+                </p>
+            </div>
+            
+    <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 recent-posts">
+        <h2>Recent Posts</h2>
+        <ul>
+            
+            <li>
+                <a class="footer-post" href="/pieda_blog/2019/02/20/nuxt/">nuxt 環境安裝及架設</a>
+            </li>
+            
+            <li>
+                <a class="footer-post" href="/pieda_blog/2019/02/19/exif/">exif 處理圖片旋轉問題</a>
+            </li>
+            
+            <li>
+                <a class="footer-post" href="/pieda_blog/2019/02/18/gulp/">gulp 前端自動化</a>
+            </li>
+            
+        </ul>
+    </div>
+
+
+
+            
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <ul class="list-inline footer-social-icons">
+                    
+                    <li class="list-inline-item">
+                        <a href="https://github.com/piedasing/pieda_blog/">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-github"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="https://www.facebook.com/weicheng.chen.10/">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-facebook"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="mailto:a0939732111@gmail.com">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-envelope-o"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                </ul>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <div class="footer-copyright">
+                    @Untitled. All right reserved | Design & Hexo <a href="http://www.codeblocq.com/">Jonathan Klughertz</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- After footer scripts -->
+
+<!-- jQuery -->
+<script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+
+<!-- Tween Max -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/gsap/1.18.5/TweenMax.min.js"></script>
+
+<!-- Gallery -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
+
+<!-- Custom JavaScript -->
+<script src="/pieda_blog/js/main.js"></script>
+
+<!-- Disqus Comments -->
+
+
+
+</body>
+
+</html>
