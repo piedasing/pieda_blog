@@ -1,98 +1,949 @@
 <!DOCTYPE html>
-<html lang="en">
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang>
 <head><meta name="generator" content="Hexo 3.8.0">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>
-        pieda 技術記錄部落格
-    </title>
-    <link rel="stylesheet" href="/pieda_blog/css/style.css">
-    <link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico">
-    <link rel="stylesheet" href="/css/style/github.min.css">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
-    <script src="/js/highlight.min.js"></script>
-    <script>hljs.initHighlightingOnLoad();</script>
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/pieda_blog/lib/font-awesome/css/font-awesome.min.css?v=4.6.2">
+
+<link rel="stylesheet" href="/pieda_blog/css/main.css?v=7.0.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/pieda_blog/images/apple-touch-icon-next.png?v=7.0.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/pieda_blog/images/favicon-32x32-next.png?v=7.0.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/pieda_blog/images/favicon-16x16-next.png?v=7.0.0">
+
+
+  <link rel="mask-icon" href="/pieda_blog/images/logo.svg?v=7.0.0" color="#222">
+
+
+
+
+
+
+
+<script id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/pieda_blog/',
+    scheme: 'Muse',
+    version: '7.0.0',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta property="og:type" content="website">
+<meta property="og:title" content="pieda 技術記錄部落格">
+<meta property="og:url" content="https://piedasing.github.io/pieda_blog/index.html">
+<meta property="og:site_name" content="pieda 技術記錄部落格">
+<meta property="og:locale" content="default">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="pieda 技術記錄部落格">
+
+
+
+
+
+
+  <link rel="canonical" href="https://piedasing.github.io/pieda_blog/">
+
+
+
+<script id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>pieda 技術記錄部落格</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .motion-element,
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-title { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
 </head>
 
-<body>
-    <div class="container">
-        <div class="header">
-    <div class="logo">
-        <a href="/pieda_blog/">pieda 技術記錄部落格</a>
+<body itemscope itemtype="http://schema.org/WebPage" lang="default">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left 
+  page-home">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/pieda_blog/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">pieda 技術記錄部落格</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
     </div>
-    <div class="nav">
-        <ul class="menu">
-            
-                <li class="menu-item">
-                    <a href="/pieda_blog/" class="menu-item-link">
-                        Home
-                    </a>
-                </li>
-            
-                <li class="menu-item">
-                    <a href="/pieda_blog/archives" class="menu-item-link">
-                        Archives
-                    </a>
-                </li>
-                
-        </ul>
-    </div>
+    
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="Toggle navigation bar">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
 </div>
-        <div class="main">
-    <div class="posts">
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
         
-        <div class="post">
-            <div class="post-title">
-                <a href="/pieda_blog/2019/02/19/exif/" class="post-title-link">
-                    exif
-                </a>
-            </div>
-            <div class="post-content">
+        
+        
+          
+          <li class="menu-item menu-item-home">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/pieda_blog/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>Startseite</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/pieda_blog/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>Archiv</a>
+
+  </li>
+
+      
+      
+    </ul>
+  
+
+  
+    
+
+  
+
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+          <div id="content" class="content">
+            
+  <section id="posts" class="posts-expand">
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://piedasing.github.io/pieda_blog/pieda_blog/2019/02/19/exif/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="pieda">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/pieda_blog/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="pieda 技術記錄部落格">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
                 
-            </div>
-            <div class="post-more">
-                <a href="/pieda_blog/2019/02/19/exif/" class="post-title-link">
-                    Read More
-                </a>
-            </div>
-            <div class="post-meta">
-                <div class="post-date">
-                    2019-02-19
-                </div>
-            </div>
+                
+                <a href="/pieda_blog/2019/02/19/exif/" class="post-title-link" itemprop="url">exif</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Veröffentlicht am</span>
+              
+
+              
+                
+              
+
+              <time title="Post created: 2019-02-19 17:00:00 / Updated at: 17:11:56" itemprop="dateCreated datePublished" datetime="2019-02-19T17:00:00+08:00">2019-02-19</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="使用到的工具、套件、技術"><a href="#使用到的工具、套件、技術" class="headerlink" title="使用到的工具、套件、技術"></a>使用到的工具、套件、技術</h3><p><em>node js、 vue-cli 、 vue 、 async/await、 promise、 exif</em></p>
+<h3 id="來源"><a href="#來源" class="headerlink" title="來源"></a>來源</h3><blockquote>
+<p><em>此為觀看 Alex宅幹嘛 youtube直播後的學習紀錄</em><br>Youtube: <a href="https://www.youtube.com/watch?v=hl_PotclEII&amp;t=27s" target="_blank" rel="noopener">https://www.youtube.com/watch?v=hl_PotclEII&amp;t=27s</a></p>
+</blockquote>
+<h3 id="目的"><a href="#目的" class="headerlink" title="目的"></a>目的</h3><blockquote>
+<p>因為圖片擁有一個名為 orientation 的屬性，<br>會使圖片在網頁上因屬性不同而有不同的轉向，<br>所以我們必須透過 exif.js 來將圖片旋轉成對的方向來觀看</p>
+</blockquote>
+<h3 id="目錄"><a href="#目錄" class="headerlink" title="目錄"></a>目錄</h3><ul>
+<li><a href="#步驟Step">步驟Step</a><ol>
+<li>安裝 node js</li>
+<li>安裝 vue-cli</li>
+<li>新建 vue 專案</li>
+<li>執行 dev server 確認 vue-cli 環境建置是否有問題</li>
+<li>安裝 exif.js</li>
+<li>在 components 資料夾內新增 ImageInput.vue</li>
+<li>在元件內 template 放置 input 元素</li>
+<li>在元件內的 script 引入 exif.js</li>
+<li>在 methods 新增非同步 function</li>
+<li>讀出檔案</li>
+<li>讀出圖片</li>
+<li>讀出 EXIF</li>
+<li>旋轉並轉存成base64</li>
+<li>大功告成</li>
+</ol>
+</li>
+<li><a href="#心得">心得</a></li>
+<li><a href="#完整程式碼">完整程式碼</a></li>
+</ul>
+<h3 id="步驟Step"><a href="#步驟Step" class="headerlink" title="步驟Step"></a><a href="步驟Step">步驟Step</a></h3><ol>
+<li>安裝 node js<blockquote>
+<p><a href="https://nodejs.org/en/" target="_blank" rel="noopener">https://nodejs.org/en/</a></p>
+</blockquote>
+<hr>
+</li>
+<li><p>安裝 vue-cli</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g @vue/cli</span><br></pre></td></tr></table></figure>
+<hr>
+</li>
+<li><p>新建vue專案</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vue create exif-demo</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>vue-cli詢問的安裝選項可以依照需求安裝或暫時都不安裝！</p>
+</blockquote>
+<hr>
+</li>
+<li><p>執行 dev server 確認 vue-cli 環境建置是否有問題</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm run serve</span><br></pre></td></tr></table></figure>
+<h2 id><a href="#" class="headerlink" title></a><img src="/pieda_blog/2019/02/19/exif/vue-init.jpg" alt="vue初始畫面"></h2></li>
+<li><p>安裝 exif.js</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install exif-js --save</span><br></pre></td></tr></table></figure>
+<hr>
+</li>
+<li>在 components 資料夾內新增 ImageInput.vue<h2 id="-1"><a href="#-1" class="headerlink" title></a><img src="/pieda_blog/2019/02/19/exif/create-component.jpg" alt="新增圖片檔案上傳元件"></h2></li>
+<li><p>在元件內 template 放置 input 元素</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">input</span></span></span><br><span class="line"><span class="tag">    <span class="attr">type</span>=<span class="string">"file"</span></span></span><br><span class="line"><span class="tag">    <span class="attr">accept</span>=<span class="string">"image/*"</span></span></span><br><span class="line"><span class="tag">    <span class="attr">:id</span>=<span class="string">"id"</span></span></span><br><span class="line"><span class="tag">    @<span class="attr">change</span>=<span class="string">"onFileUpload"</span></span></span><br><span class="line"><span class="tag">  /&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<hr>
+</li>
+<li><p>在元件內的 script 引入 exif.js</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> EXIF <span class="keyword">from</span> <span class="string">'exif-js'</span></span><br></pre></td></tr></table></figure>
+<hr>
+</li>
+<li><p>在 methods 新增非同步 function</p>
+ <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">async</span> onFileUpload(e) &#123;</span><br><span class="line">  <span class="keyword">const</span> file = e.target.files[<span class="number">0</span>] <span class="comment">// 抓出上傳的檔案</span></span><br><span class="line">  <span class="keyword">try</span> &#123;</span><br><span class="line">    <span class="comment">/*** 程式流程</span></span><br><span class="line"><span class="comment">    *** 從input上傳檔案 -&gt; 讀出圖片 -&gt; 抓出exif -&gt; 放進畫布旋轉後，轉存成base64</span></span><br><span class="line"><span class="comment">    ***/</span></span><br><span class="line">    <span class="keyword">let</span> src = <span class="keyword">await</span> <span class="keyword">this</span>.loadFile(file) <span class="comment">// 讀出檔案內的圖片路徑</span></span><br><span class="line">    <span class="keyword">this</span>.$emit(<span class="string">'origin'</span>, src) <span class="comment">// 回傳給父元件原圖路徑</span></span><br><span class="line">    <span class="keyword">const</span> img = <span class="keyword">await</span> <span class="keyword">this</span>.loadImage(src) <span class="comment">// 從路徑讀出圖片</span></span><br><span class="line">    <span class="keyword">let</span> exif = <span class="keyword">await</span> <span class="keyword">this</span>.loadEXIF(img) <span class="comment">// 抓出exif</span></span><br><span class="line">    <span class="keyword">if</span> (!exif) &#123;</span><br><span class="line">      exif = <span class="number">1</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'exif: '</span>, exif)</span><br><span class="line">    <span class="keyword">if</span> (exif !== <span class="number">1</span>) &#123;</span><br><span class="line">      <span class="keyword">const</span> rotatedSrc = <span class="keyword">this</span>.getBase64(img, exif) <span class="comment">// 旋轉後，轉存成base64</span></span><br><span class="line">      src = rotatedSrc <span class="comment">// 旋轉完成的圖片路徑(base64)</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">this</span>.$emit(<span class="string">'completed'</span>, src) <span class="comment">// 回傳給父元件結果</span></span><br><span class="line">  &#125; <span class="keyword">catch</span> (error) &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(error)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<hr>
+</li>
+<li><p>讀出檔案</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">loadFile(file) &#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">const</span> reader = <span class="keyword">new</span> FileReader()</span><br><span class="line">    reader.onload = <span class="function"><span class="params">()</span> =&gt;</span> resolve(reader.result)</span><br><span class="line">    reader.onerror = reject</span><br><span class="line">    reader.readAsDataURL(file)</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<hr>
+</li>
+<li><p>讀出圖片</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">loadImage(src) &#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">const</span> image = <span class="keyword">new</span> Image()</span><br><span class="line">    image.onload = <span class="function"><span class="params">()</span> =&gt;</span> resolve(image)</span><br><span class="line">    image.onerror = reject</span><br><span class="line">    image.src = src</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<hr>
+</li>
+<li><p>讀出EXIF</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">loadEXIF(img) &#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> &#123;</span><br><span class="line">    EXIF.getData(img, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">      <span class="keyword">const</span> tags = EXIF.getAllTags(<span class="keyword">this</span>)</span><br><span class="line">      <span class="keyword">const</span> exif = tags.Orientation</span><br><span class="line">      <span class="built_in">console</span>.log(<span class="string">'exif: '</span>, exif)</span><br><span class="line">      resolve(exif)</span><br><span class="line">    &#125;)</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<hr>
+</li>
+<li><p>旋轉並轉存成base64</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line">getBase64(img, rotate) &#123;</span><br><span class="line">  <span class="keyword">const</span> canvas = <span class="built_in">document</span>.createElement(<span class="string">'canvas'</span>)</span><br><span class="line">  <span class="keyword">const</span> ctx = canvas.getContext(<span class="string">'2d'</span>)</span><br><span class="line">  <span class="keyword">let</span> &#123; width, height &#125; = img</span><br><span class="line"></span><br><span class="line">  <span class="keyword">let</span> scale = width &gt; height ? <span class="number">800</span> / width : <span class="number">800</span> / height</span><br><span class="line">  <span class="keyword">if</span> (scale &gt; <span class="number">1</span>) &#123;</span><br><span class="line">    scale = <span class="number">1</span></span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">let</span> dw = width * scale</span><br><span class="line">  <span class="keyword">let</span> dh = height * scale</span><br><span class="line"></span><br><span class="line">  canvas.width = rotate &gt; <span class="number">4</span> ? dh : dw</span><br><span class="line">  canvas.height = rotate &gt; <span class="number">4</span> ? dw : dh</span><br><span class="line"></span><br><span class="line">  <span class="keyword">let</span> x = canvas.width / <span class="number">2</span></span><br><span class="line">  <span class="keyword">let</span> y = canvas.height / <span class="number">2</span></span><br><span class="line"></span><br><span class="line">  ctx.translate(x, y) <span class="comment">// 正中心</span></span><br><span class="line"></span><br><span class="line">  <span class="keyword">switch</span> (rotate) &#123;</span><br><span class="line">    <span class="keyword">case</span> <span class="number">2</span>:</span><br><span class="line">    <span class="keyword">case</span> <span class="number">4</span>:</span><br><span class="line">    <span class="keyword">case</span> <span class="number">5</span>:</span><br><span class="line">    <span class="keyword">case</span> <span class="number">7</span>:</span><br><span class="line">      ctx.scale(<span class="number">-1</span>, <span class="number">1</span>) <span class="comment">// 鏡向</span></span><br><span class="line">      <span class="keyword">break</span></span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">// 旋轉圖片</span></span><br><span class="line">  <span class="keyword">switch</span> (rotate) &#123;</span><br><span class="line">    <span class="keyword">case</span> <span class="number">3</span>:</span><br><span class="line">    <span class="keyword">case</span> <span class="number">4</span>:</span><br><span class="line">      ctx.rotate(<span class="number">180</span> * (<span class="built_in">Math</span>.PI / <span class="number">180</span>))</span><br><span class="line">      <span class="keyword">break</span></span><br><span class="line">    <span class="keyword">case</span> <span class="number">5</span>:</span><br><span class="line">    <span class="keyword">case</span> <span class="number">6</span>:</span><br><span class="line">      ctx.rotate(<span class="number">90</span> * (<span class="built_in">Math</span>.PI / <span class="number">180</span>))</span><br><span class="line">      <span class="keyword">break</span></span><br><span class="line">    <span class="keyword">case</span> <span class="number">7</span>:</span><br><span class="line">    <span class="keyword">case</span> <span class="number">8</span>:</span><br><span class="line">      ctx.rotate(<span class="number">-90</span> * (<span class="built_in">Math</span>.PI / <span class="number">180</span>))</span><br><span class="line">      <span class="keyword">break</span></span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">if</span> (rotate &gt; <span class="number">4</span>) &#123; <span class="comment">// 寬高互換</span></span><br><span class="line">    ;[x, y] = [y, x]</span><br><span class="line">  &#125;</span><br><span class="line">  ctx.drawImage(img, -x, -y, dw, dh) <span class="comment">// 將旋轉後的圖片畫出來</span></span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> canvas.toDataURL() <span class="comment">// 回傳base64</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<hr>
+</li>
+<li><p>大功告成</p>
+<blockquote>
+<p>可以從父元件接收到旋轉後的src放進img內<br>將圖片顯示出來即可看到旋轉後的結果</p>
+</blockquote>
+<p><img src="/pieda_blog/2019/02/19/exif/use-component.jpg" alt="使用元件"></p>
+<blockquote>
+<p>建議傳 id 進元件內，當作元素識別，避免同時擁有好幾個 input 在畫面時，不知道是哪一個元件</p>
+</blockquote>
+</li>
+</ol>
+<h3 id="心得"><a href="#心得" class="headerlink" title="心得"></a><a href="#心得">心得</a></h3><blockquote>
+<p>使用電腦時，因為window10有幫我們處理這個問題，所以在電腦上看，是看不出個所以然的！<br>第一次在公司iphone看到圖片上傳後，居然變躺著的…(當時嚇傻了，還以為測試機被我弄壞了)<br>幸好是能透過程式來挽救的(X</p>
+<p>目前已知會幫忙把圖片自動儲存成正向的手機是 HTC<br>其他牌，例如 Samsung、iphone、Sony的手機都會帶有非1的orientation(就是會旋轉的意思~)</p>
+</blockquote>
+<h3 id="完整程式碼"><a href="#完整程式碼" class="headerlink" title="完整程式碼"></a><a href="#完整程式碼">完整程式碼</a></h3><h5 id="Home-vue"><a href="#Home-vue" class="headerlink" title="Home.vue :"></a>Home.vue :</h5><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">"home"</span>&gt;</span><br><span class="line">    &lt;img alt=<span class="string">"Vue logo"</span> src=<span class="string">"../assets/logo.png"</span>&gt;</span><br><span class="line"></span><br><span class="line">    &lt;ImageInput :id=<span class="string">"'test1'"</span> @origin=<span class="string">"origin = $event"</span> @rotated=<span class="string">"rotated = $event"</span> /&gt;</span><br><span class="line">    &lt;br&gt;</span><br><span class="line">    &lt;h3&gt;origin&lt;<span class="regexp">/h3&gt;</span></span><br><span class="line"><span class="regexp">    &lt;img :src="origin" style="width: 150px;"&gt;</span></span><br><span class="line"><span class="regexp">    &lt;br&gt;</span></span><br><span class="line"><span class="regexp">    &lt;h3&gt;rotated&lt;/</span>h3&gt;</span><br><span class="line">    &lt;img :src=<span class="string">"rotated"</span> style=<span class="string">"width: 150px;"</span>&gt;</span><br><span class="line"></span><br><span class="line">  &lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">&lt;/</span>template&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line"><span class="comment">// @ is an alias to /src</span></span><br><span class="line"><span class="keyword">import</span> ImageInput <span class="keyword">from</span> <span class="string">'@/components/ImageInput.vue'</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span><br><span class="line">  name: <span class="string">'home'</span>,</span><br><span class="line">  components: &#123;</span><br><span class="line">    ImageInput,</span><br><span class="line">  &#125;,</span><br><span class="line">  data() &#123;</span><br><span class="line">    <span class="keyword">return</span> &#123;</span><br><span class="line">      origin: <span class="string">''</span>,</span><br><span class="line">      rotated: <span class="string">''</span>,</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;;</span><br><span class="line">&lt;<span class="regexp">/script&gt;</span></span><br></pre></td></tr></table></figure>
+<h5 id="ImageInput-vue"><a href="#ImageInput-vue" class="headerlink" title="ImageInput.vue :"></a>ImageInput.vue :</h5><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;input</span><br><span class="line">    type=<span class="string">"file"</span></span><br><span class="line">    accept=<span class="string">"image/*"</span></span><br><span class="line">    :id=<span class="string">"id"</span></span><br><span class="line">    @change=<span class="string">"onFileUpload"</span></span><br><span class="line">  /&gt;</span><br><span class="line">&lt;<span class="regexp">/template&gt;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">&lt;script&gt;</span></span><br><span class="line"><span class="regexp">import EXIF from 'exif-js'</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">export default &#123;</span></span><br><span class="line"><span class="regexp">  name: 'ImageInput',</span></span><br><span class="line"><span class="regexp">  props: &#123;</span></span><br><span class="line"><span class="regexp">    id: &#123;</span></span><br><span class="line"><span class="regexp">      type: String,</span></span><br><span class="line"><span class="regexp">      required: true</span></span><br><span class="line"><span class="regexp">    &#125;</span></span><br><span class="line"><span class="regexp">  &#125;,</span></span><br><span class="line"><span class="regexp">  methods: &#123;</span></span><br><span class="line"><span class="regexp">    async onFileUpload(e) &#123;</span></span><br><span class="line"><span class="regexp">      const file = e.target.files[0] /</span><span class="regexp">/ 抓出上傳的檔案</span></span><br><span class="line"><span class="regexp">      try &#123;</span></span><br><span class="line"><span class="regexp">        /</span>*** 程式流程</span><br><span class="line">        *** 從input上傳檔案 -&gt; 讀出圖片 -&gt; 抓出exif -&gt; 放進畫布旋轉後，轉存成base64</span><br><span class="line">        ***<span class="regexp">/</span></span><br><span class="line"><span class="regexp">        let src = await this.loadFile(file) /</span><span class="regexp">/ 讀出檔案內的圖片路徑</span></span><br><span class="line"><span class="regexp">        this.$emit('origin', src) /</span><span class="regexp">/ 回傳給父元件原圖路徑</span></span><br><span class="line"><span class="regexp">        const img = await this.loadImage(src) /</span><span class="regexp">/ 從路徑讀出圖片</span></span><br><span class="line"><span class="regexp">        let exif = await this.loadEXIF(img) /</span><span class="regexp">/ 抓出exif</span></span><br><span class="line"><span class="regexp">        if (!exif) &#123;</span></span><br><span class="line"><span class="regexp">          exif = 1</span></span><br><span class="line"><span class="regexp">        &#125;</span></span><br><span class="line"><span class="regexp">        console.log('exif: ', exif)</span></span><br><span class="line"><span class="regexp">        if (exif !== 1) &#123;</span></span><br><span class="line"><span class="regexp">          const rotatedSrc = this.getBase64(img, exif) /</span><span class="regexp">/ 旋轉後，轉存成base64</span></span><br><span class="line"><span class="regexp">          src = rotatedSrc /</span><span class="regexp">/ 旋轉完成的圖片路徑(base64)</span></span><br><span class="line"><span class="regexp">        &#125;</span></span><br><span class="line"><span class="regexp">        this.$emit('completed', src) /</span><span class="regexp">/ 回傳給父元件結果</span></span><br><span class="line"><span class="regexp">      &#125; catch (error) &#123;</span></span><br><span class="line"><span class="regexp">        console.log(error)</span></span><br><span class="line"><span class="regexp">      &#125;</span></span><br><span class="line"><span class="regexp">    &#125;,</span></span><br><span class="line"><span class="regexp">    loadFile(file) &#123;</span></span><br><span class="line"><span class="regexp">      return new Promise((resolve, reject) =&gt; &#123;</span></span><br><span class="line"><span class="regexp">        const reader = new FileReader()</span></span><br><span class="line"><span class="regexp">        reader.onload = () =&gt; resolve(reader.result)</span></span><br><span class="line"><span class="regexp">        reader.onerror = reject</span></span><br><span class="line"><span class="regexp">        reader.readAsDataURL(file)</span></span><br><span class="line"><span class="regexp">      &#125;)</span></span><br><span class="line"><span class="regexp">    &#125;,</span></span><br><span class="line"><span class="regexp">    loadImage(src) &#123;</span></span><br><span class="line"><span class="regexp">      return new Promise((resolve, reject) =&gt; &#123;</span></span><br><span class="line"><span class="regexp">        const image = new Image()</span></span><br><span class="line"><span class="regexp">        image.onload = () =&gt; resolve(image)</span></span><br><span class="line"><span class="regexp">        image.onerror = reject</span></span><br><span class="line"><span class="regexp">        image.src = src</span></span><br><span class="line"><span class="regexp">      &#125;)</span></span><br><span class="line"><span class="regexp">    &#125;,</span></span><br><span class="line"><span class="regexp">    loadEXIF(img) &#123;</span></span><br><span class="line"><span class="regexp">      return new Promise((resolve, reject) =&gt; &#123;</span></span><br><span class="line"><span class="regexp">        EXIF.getData(img, function() &#123;</span></span><br><span class="line"><span class="regexp">          const tags = EXIF.getAllTags(this)</span></span><br><span class="line"><span class="regexp">          const exif = tags.Orientation</span></span><br><span class="line"><span class="regexp">          console.log('exif: ', exif)</span></span><br><span class="line"><span class="regexp">          resolve(exif)</span></span><br><span class="line"><span class="regexp">        &#125;)</span></span><br><span class="line"><span class="regexp">      &#125;)</span></span><br><span class="line"><span class="regexp">    &#125;,</span></span><br><span class="line"><span class="regexp">    getBase64(img, rotate) &#123;</span></span><br><span class="line"><span class="regexp">      const canvas = document.createElement('canvas')</span></span><br><span class="line"><span class="regexp">      const ctx = canvas.getContext('2d')</span></span><br><span class="line"><span class="regexp">      let &#123; width, height &#125; = img</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">      let scale = width &gt; height ? 800 /</span> width : <span class="number">800</span> / height</span><br><span class="line">      <span class="keyword">if</span> (scale &gt; <span class="number">1</span>) &#123;</span><br><span class="line">        scale = <span class="number">1</span></span><br><span class="line">      &#125;</span><br><span class="line"></span><br><span class="line">      <span class="keyword">let</span> dw = width * scale</span><br><span class="line">      <span class="keyword">let</span> dh = height * scale</span><br><span class="line"></span><br><span class="line">      canvas.width = rotate &gt; <span class="number">4</span> ? dh : dw</span><br><span class="line">      canvas.height = rotate &gt; <span class="number">4</span> ? dw : dh</span><br><span class="line"></span><br><span class="line">      <span class="keyword">let</span> x = canvas.width / <span class="number">2</span></span><br><span class="line">      <span class="keyword">let</span> y = canvas.height / <span class="number">2</span></span><br><span class="line"></span><br><span class="line">      ctx.translate(x, y) <span class="comment">// 正中心</span></span><br><span class="line"></span><br><span class="line">      <span class="keyword">switch</span> (rotate) &#123;</span><br><span class="line">        <span class="keyword">case</span> <span class="number">2</span>:</span><br><span class="line">        <span class="keyword">case</span> <span class="number">4</span>:</span><br><span class="line">        <span class="keyword">case</span> <span class="number">5</span>:</span><br><span class="line">        <span class="keyword">case</span> <span class="number">7</span>:</span><br><span class="line">          ctx.scale(<span class="number">-1</span>, <span class="number">1</span>) <span class="comment">// 鏡向</span></span><br><span class="line">          <span class="keyword">break</span></span><br><span class="line">      &#125;</span><br><span class="line">      <span class="comment">// 旋轉圖片</span></span><br><span class="line">      <span class="keyword">switch</span> (rotate) &#123;</span><br><span class="line">        <span class="keyword">case</span> <span class="number">3</span>:</span><br><span class="line">        <span class="keyword">case</span> <span class="number">4</span>:</span><br><span class="line">          ctx.rotate(<span class="number">180</span> * (<span class="built_in">Math</span>.PI / <span class="number">180</span>))</span><br><span class="line">          <span class="keyword">break</span></span><br><span class="line">        <span class="keyword">case</span> <span class="number">5</span>:</span><br><span class="line">        <span class="keyword">case</span> <span class="number">6</span>:</span><br><span class="line">          ctx.rotate(<span class="number">90</span> * (<span class="built_in">Math</span>.PI / <span class="number">180</span>))</span><br><span class="line">          <span class="keyword">break</span></span><br><span class="line">        <span class="keyword">case</span> <span class="number">7</span>:</span><br><span class="line">        <span class="keyword">case</span> <span class="number">8</span>:</span><br><span class="line">          ctx.rotate(<span class="number">-90</span> * (<span class="built_in">Math</span>.PI / <span class="number">180</span>))</span><br><span class="line">          <span class="keyword">break</span></span><br><span class="line">      &#125;</span><br><span class="line">      <span class="keyword">if</span> (rotate &gt; <span class="number">4</span>) &#123; <span class="comment">// 寬高互換</span></span><br><span class="line">        ;[x, y] = [y, x]</span><br><span class="line">      &#125;</span><br><span class="line">      ctx.drawImage(img, -x, -y, dw, dh) <span class="comment">// 將旋轉後的圖片畫出來</span></span><br><span class="line"></span><br><span class="line">      <span class="keyword">return</span> canvas.toDataURL() <span class="comment">// 回傳base64</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">&lt;<span class="regexp">/script&gt;</span></span><br></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://piedasing.github.io/pieda_blog/pieda_blog/2019/02/19/gulp/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="pieda">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/pieda_blog/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="pieda 技術記錄部落格">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/pieda_blog/2019/02/19/gulp/" class="post-title-link" itemprop="url">gulp</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Veröffentlicht am</span>
+              
+
+              
+                
+              
+
+              <time title="Post created: 2019-02-19 16:11:04 / Updated at: 17:48:59" itemprop="dateCreated datePublished" datetime="2019-02-19T16:11:04+08:00">2019-02-19</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="使用到的工具、套件、技術"><a href="#使用到的工具、套件、技術" class="headerlink" title="使用到的工具、套件、技術"></a>使用到的工具、套件、技術</h3><p><em>gulp、browser-sync、gulp-rename、SASS/SCSS、gulp-autoprefixer</em></p>
+<h3 id="目的"><a href="#目的" class="headerlink" title="目的"></a>目的</h3><blockquote>
+<p>為求開發時，簡化重複的流程、建立一個良好的本機開發環境</p>
+</blockquote>
+<h3 id="步驟"><a href="#步驟" class="headerlink" title="步驟"></a>步驟</h3><ol>
+<li>安裝 node js<blockquote>
+<p><a href="https://nodejs.org/en/" target="_blank" rel="noopener">https://nodejs.org/en/</a></p>
+</blockquote>
+</li>
+<li><p>安裝全域 gulp</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g gulp</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>初始化專案，產生 package.json</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm init</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>安裝本地所需套件</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">// 安裝本地 gulp</span><br><span class="line">npm install gulp --save</span><br><span class="line"></span><br><span class="line">// 安裝 sass 及 自動補前綴樣式的套件</span><br><span class="line">npm install gulp-sass gulp-autoprefixer --save</span><br><span class="line"></span><br><span class="line">// 安裝重新命名的套件</span><br><span class="line">npm install gulp-rename --save</span><br><span class="line"></span><br><span class="line">// 安裝建立本機伺服器及自動重整瀏覽器用的套件</span><br><span class="line">npm install browser-sync --save</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>在根目錄新增 gulpfile.js</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> gulp = <span class="built_in">require</span>(<span class="string">'gulp'</span>);</span><br><span class="line"><span class="keyword">var</span> sass = <span class="built_in">require</span>(<span class="string">'gulp-sass'</span>);</span><br><span class="line"><span class="keyword">var</span> cleanCss = <span class="built_in">require</span>(<span class="string">'gulp-clean-css'</span>);</span><br><span class="line"><span class="keyword">var</span> prefix = <span class="built_in">require</span>(<span class="string">'gulp-autoprefixer'</span>);</span><br><span class="line"><span class="keyword">var</span> browserSync = <span class="built_in">require</span>(<span class="string">'browser-sync'</span>);</span><br><span class="line"><span class="keyword">var</span> rename = <span class="built_in">require</span>(<span class="string">'gulp-rename'</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> scss = &#123;</span><br><span class="line">  output: &#123;</span><br><span class="line">    outputStyle: <span class="string">'expanded'</span></span><br><span class="line">    <span class="comment">// outputStyle: 'compressed'</span></span><br><span class="line">  &#125;,</span><br><span class="line">  prefix: &#123;</span><br><span class="line">    browsers: [<span class="string">'last 2 versions'</span>]</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> minify = &#123;</span><br><span class="line">  compatibility: <span class="string">'ie8'</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">gulp.task(<span class="string">'scss'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  gulp.src(<span class="string">'scss/style.scss'</span>) <span class="comment">// 來源檔案</span></span><br><span class="line">    .pipe(sass(scss.output)) <span class="comment">// 將scss編譯成css</span></span><br><span class="line">    .pipe(prefix(scss.prefix)) <span class="comment">// prefix()加入樣式前綴，()內不加屬性則使用autoprefix的預設值</span></span><br><span class="line">    .pipe(gulp.dest(<span class="string">'./style'</span>)) <span class="comment">// 輸出位置</span></span><br><span class="line">    .pipe(rename(<span class="string">'style.min.css'</span>)) <span class="comment">// 重新命名css</span></span><br><span class="line">    .pipe(cleanCss(minify)) <span class="comment">// 壓縮css</span></span><br><span class="line">    .pipe(gulp.dest(<span class="string">'./style'</span>)) <span class="comment">// 輸出位置</span></span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">gulp.task(<span class="string">'browser-sync'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123; <span class="comment">// 建立localhost伺服器</span></span><br><span class="line">  browserSync.init([<span class="string">"style/*.css"</span>, <span class="string">"js/*.js"</span>], &#123;</span><br><span class="line">    server: &#123;</span><br><span class="line">      baseDir: <span class="string">"./"</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">gulp.task(<span class="string">'watch'</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123; <span class="comment">// 存檔就刷新瀏覽器</span></span><br><span class="line">  gulp.watch(<span class="string">"scss/*.scss"</span>, [<span class="string">'scss'</span>]).on(<span class="string">'change'</span>, browserSync.reload);</span><br><span class="line">  gulp.watch(<span class="string">"./*.html"</span>).on(<span class="string">'change'</span>, browserSync.reload);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">gulp.task(<span class="string">'default'</span>, [<span class="string">'watch'</span>, <span class="string">'scss'</span>, <span class="string">'browser-sync'</span>]);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>在根目錄新增 index.html 及 scss 資料夾內新增 style.scss</p>
+<blockquote>
+</blockquote>
+<p>   gulp-demo(根目錄)<br>   |–scss<br>   &nbsp;&nbsp;|– style.scss<br>   |– gulpfile.js<br>   |– index.html<br>   |– package-lock.json<br>   |– package.json</p>
+<blockquote>
+</blockquote>
+</li>
+<li><p>執行 gulp，啟動伺服器</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gulp</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>開發網頁GO~</p>
+<blockquote>
+<p>當在 index.html 或是 style.scss 內有變更時(存檔)，瀏覽器會自動刷新<br>如果要停止伺服器，則按下 ctrl + c (mac 的 ctrl 改為 cmd)</p>
+</blockquote>
+</li>
+</ol>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+  </section>
+
+  
+
+
+          </div>
+          
+
         </div>
         
-        <div class="post">
-            <div class="post-title">
-                <a href="/pieda_blog/2019/02/19/gulp/" class="post-title-link">
-                    gulp
-                </a>
-            </div>
-            <div class="post-content">
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <div class="site-overview-wrap sidebar-panel sidebar-panel-active">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">pieda</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
                 
-            </div>
-            <div class="post-more">
-                <a href="/pieda_blog/2019/02/19/gulp/" class="post-title-link">
-                    Read More
-                </a>
-            </div>
-            <div class="post-meta">
-                <div class="post-date">
-                    2019-02-19
+                  <a href="/pieda_blog/archives/">
+                
+                    <span class="site-state-item-count">2</span>
+                    <span class="site-state-item-name">Artikel</span>
+                  </a>
                 </div>
-            </div>
+              
+
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">2</span>
+                    <span class="site-state-item-name">Tags</span>
+                  
+                </div>
+              
+            </nav>
+          
+
+          
+
+          
+
+          
+
+          
+          
+
+          
+            
+          
+          
+
         </div>
+      </div>
+
+      
+
+      
+
+    </div>
+  </aside>
+
+
         
-    </div>
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">pieda</span>
+
+  
+
+  
 </div>
 
 
-        <div class="footer">
-    <a href="#">回最上面</a>
-</div>
+  <div class="powered-by">Erstellt mit  <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> v3.8.0</div>
 
-    </div>
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> v7.0.0</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+    
+
+    
+  </div>
+
+  
+
+<script>
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script src="/pieda_blog/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script src="/pieda_blog/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script src="/pieda_blog/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+
+  
+
+
+  <script src="/pieda_blog/js/src/utils.js?v=7.0.0"></script>
+
+  <script src="/pieda_blog/js/src/motion.js?v=7.0.0"></script>
+
+
+
+  
+  
+
+
+  <script src="/pieda_blog/js/src/schemes/muse.js?v=7.0.0"></script>
+
+
+
+  
+
+  
+
+
+  <script src="/pieda_blog/js/src/bootstrap.js?v=7.0.0"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
 </body>
-
 </html>
