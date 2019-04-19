@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+  
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  <meta name="author" content="陳韋呈 pieda@coder.com.tw">
+  
+  
+  
+  <title>nuxt-demo | pieda</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  
+    <meta name="keywords" content="Nuxt、Vue、SSR,">
+  
+
+  <script>
+    console.log('\n%c Hexo-theme-bmw v4.0 ' + '%c 🎉 https://github.com/dongyuanxin/theme-bmw 🎉\n' + '\n%c View demo online ' + '%c 🔍 https://godbmw.com/ 🔍  \n' , 'color: #fadfa3; background: #030307; padding:3px 0;', '', 'color: #fadfa3; background: #030307; padding:3px 0;', '');
+  </script>
+
+  
+
+  
+
+  
+    <link rel="icon" href="/images/favicon.ico">
+    <link rel="apple-touch-icon" href="/images/touch-icon.png">
+  
+
+  <link href="https://cdn.bootcss.com/fancybox/3.5.2/jquery.fancybox.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="/pieda_blog/css/base.css">
+<link rel="stylesheet" href="/pieda_blog/icon/iconfont.css">
+<link rel="stylesheet" href="/pieda_blog/css/github-markdown.css">
+<link rel="stylesheet" href="/pieda_blog/css/highlight.css">
+
+  <script src="/pieda_blog/js/util.js"></script>
+<script src="/pieda_blog/js/valine.min.js"></script>
+
+  
+
+  
+    <link href="https://cdn.bootcss.com/aplayer/1.10.1/APlayer.min.css" rel="stylesheet">
+    <script src="https://cdn.bootcss.com/aplayer/1.10.1/APlayer.min.js" async></script>
+  
+
+  
+  
+  <script src="//cdn.bootcss.com/jquery/3.3.1/jquery.min.js" async></script>
+  
+  
+    <script src="//cdn.jsdelivr.net/npm/leancloud-storage@3.11.0/dist/av-min.js"></script>
+  
+
+</head>
+
+
+  <body>
+
+    
+
+    <div id="app">
+
+      <div class="header-wrap">
+  <header>
+    <div class="site-brand">
+      <div class="site-title">
+        <a href="/pieda_blog/">前端學習紀錄</a>
+      </div>
+    </div>
+    <nav class="site-navigation">
+      <ul class="nav-menu">
+      
+        <li class="nav-item" data-path="/">
+          
+            <a href="/pieda_blog/" target="_self">
+              首頁
+            </a>
+          
+        </li>
+      
+        <li class="nav-item" data-path="/archives/">
+          
+            <a href="/pieda_blog/archives/" target="_self">
+              文章列表
+            </a>
+          
+        </li>
+      
+        <li class="nav-item" data-path>
+          
+            <a href="javascript:void(0);" v-else>關於我</a>
+            <ul class="nav-menu--dropdown">
+              
+                <li>
+                  <a href="https://github.com/piedasing" target="_blank">
+                    Github
+                  </a>
+                </li>
+              
+                <li>
+                  <a href="https://www.facebook.com/weicheng.chen.10" target="_blank">
+                    Facebook
+                  </a>
+                </li>
+              
+            </ul>
+          
+        </li>
+      
+      </ul>
+    </nav>
+    <i class="iconfont icon-menu"></i>
+  </header>
+</div>
+
+<script>
+  let links = document.querySelectorAll('.nav-item');
+  for(let link of links){
+    let childrenLink = link.querySelector('ul');
+    link.addEventListener('mouseenter', () => {
+      if(childrenLink) {
+        childrenLink.className = "nav-menu--dropdown active";
+      }
+    })
+    link.addEventListener('mouseleave', () => {
+      if(childrenLink) {
+        childrenLink.className = "nav-menu--dropdown";
+      }
+    })
+  }
+  let rootRealPath = getRealPath(window.location.pathname, true);
+  for(let link of links) {
+    let linkPath = link.getAttribute("data-path");
+    if(linkPath && getRealPath(linkPath, true) === rootRealPath) {
+      link.className = "nav-item hover";
+    }
+  }
+
+  let iconMenu = document.querySelector("i.iconfont.icon-menu"),
+    iconMenuClicked = false;
+  let navDOM = document.querySelector("nav.site-navigation");
+  iconMenu.addEventListener("click", () => {
+    iconMenuClicked 
+      ? navDOM.className = "site-navigation active"
+      : navDOM.className = "site-navigation";
+    iconMenuClicked = !iconMenuClicked;
+  })
+</script>
+
+      
+
+
+
+
+
+
+
+
+<div class="container post-index">
+
+  
+
+<div class="post">
+  <h1 class="article-title">
+    <span>nuxt-demo</span>
+  </h1>
+  <div class="article-top-meta">
+    <span>
+      發布 : 
+      2019-04-17
+    </span>
+    
+    
+      <span>
+        瀏覽 : <span class="article-timer" data-identity="nuxt-demo"></span>
+      </span>
+    
+  </div>
+
+  
+
+  <div class="article-content">
+    <div class="markdown-body">
+      <h3 id="相關工具、套件、技術"><a href="#相關工具、套件、技術" class="headerlink" title="相關工具、套件、技術"></a>相關工具、套件、技術</h3><p><em>Nuxt、Vue、SSR</em></p>
+<h3 id="目的"><a href="#目的" class="headerlink" title="目的"></a>目的</h3><blockquote>
+<ol>
+<li>使用 Nuxt ，製作具有 SSR 的簡單電商網頁</li>
+</ol>
+</blockquote>
+<h3 id="步驟"><a href="#步驟" class="headerlink" title="步驟"></a>步驟</h3><ol>
+<li>新建 nuxt-app 專案<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npx create-nuxt-app &lt;專案名稱&gt;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<hr>
+<ol start="2">
+<li><p>安裝套件</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">// 安裝 sass 跟 pug</span><br><span class="line">npm install node-sass sass-loader pug pug-plain-loader</span><br><span class="line"></span><br><span class="line">// 安裝 json-server</span><br><span class="line">npm install json-server</span><br><span class="line"></span><br><span class="line">// 安裝 style-resources (在每個.vue檔載入sass/scss檔)</span><br><span class="line">npm install @nuxtjs/style-resources</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>在 assets 資料夾新增樣式</p>
+<blockquote>
+<p><img src="/pieda_blog/2019/04/17/nuxt-demo/asset.jpg" alt="asset資料夾結構"></p>
+</blockquote>
+<blockquote>
+<p>_mixins.scss</p>
+<figure class="highlight scss"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">@<span class="keyword">mixin</span> size(<span class="variable">$w</span>, <span class="variable">$h</span>: <span class="variable">$w</span>) &#123;</span><br><span class="line">  <span class="attribute">width</span>: <span class="variable">$w</span>;</span><br><span class="line">  <span class="attribute">height</span>: <span class="variable">$h</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">@<span class="keyword">mixin</span> flex(<span class="variable">$horizontal</span>, <span class="variable">$vertial</span>: <span class="variable">$horizontal</span>) &#123;</span><br><span class="line">  <span class="attribute">display</span>: flex;</span><br><span class="line">  <span class="attribute">justify-content</span>: <span class="variable">$horizontal</span>;</span><br><span class="line">  <span class="attribute">align-items</span>: <span class="variable">$vertial</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">@<span class="keyword">mixin</span> bg(<span class="variable">$w</span>, <span class="variable">$h</span>, <span class="variable">$bgSize</span>: contain) &#123;</span><br><span class="line">  @<span class="keyword">include</span> size(<span class="variable">$w</span>, <span class="variable">$h</span>);</span><br><span class="line">  <span class="attribute">background-size</span>: <span class="variable">$bgSize</span>;</span><br><span class="line">  <span class="attribute">background-position</span>: center center;</span><br><span class="line">  <span class="attribute">background-repeat</span>: no-repeat;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="variable">$color-primary</span>: <span class="number">#2C4832</span>;</span><br><span class="line"><span class="variable">$color-secondary</span>: <span class="number">#2C4832</span>;</span><br></pre></td></tr></table></figure>
+</blockquote>
+<blockquote>
+<p>transition.css</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.page-enter-active</span>, <span class="selector-class">.page-leave-active</span> &#123;</span><br><span class="line">  <span class="attribute">transition</span>: all <span class="number">0.5s</span> ease-in-out;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.page-enter</span>, <span class="selector-class">.page-leave-to</span> &#123;</span><br><span class="line">  <span class="attribute">transform</span>: <span class="built_in">rotate</span>(180deg);</span><br><span class="line">  <span class="attribute">opacity</span>: <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.page-enter-to</span>, <span class="selector-class">.page-leave</span> &#123;</span><br><span class="line">  <span class="attribute">opacity</span>: <span class="number">1</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.icon-enter-active</span>, <span class="selector-class">.icon-leave-active</span> &#123;</span><br><span class="line">  <span class="attribute">transition</span>: all <span class="number">0.5s</span> ease-in-out;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.icon-enter</span>, <span class="selector-class">.icon-leave-to</span> &#123;</span><br><span class="line">  <span class="attribute">transform</span>: <span class="built_in">scale</span>(1.5);</span><br><span class="line">  <span class="attribute">opacity</span>: <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.icon-enter-to</span>, <span class="selector-class">.icon-leave</span> &#123;</span><br><span class="line">  <span class="attribute">opacity</span>: <span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</blockquote>
+</li>
+<li><p>到 nuxt.config.js 載入樣式</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">head: &#123;</span><br><span class="line">  title: pkg.name,</span><br><span class="line">  meta: [</span><br><span class="line">    &#123; <span class="attr">charset</span>: <span class="string">'utf-8'</span> &#125;,</span><br><span class="line">    &#123; <span class="attr">name</span>: <span class="string">'viewport'</span>, <span class="attr">content</span>: <span class="string">'width=device-width, initial-scale=1'</span> &#125;,</span><br><span class="line">    &#123; <span class="attr">hid</span>: <span class="string">'description'</span>, <span class="attr">name</span>: <span class="string">'description'</span>, <span class="attr">content</span>: pkg.description &#125;</span><br><span class="line">    <span class="comment">// 這裡可以新增要放的 meta 資訊</span></span><br><span class="line">  ],</span><br><span class="line">  link: [</span><br><span class="line">    &#123; <span class="attr">rel</span>: <span class="string">'icon'</span>, <span class="attr">type</span>: <span class="string">'image/x-icon'</span>, <span class="attr">href</span>: <span class="string">'/favicon.ico'</span> &#125;,</span><br><span class="line">    <span class="comment">// 載入 fontawesome 樣式</span></span><br><span class="line">    &#123; <span class="attr">rel</span>: <span class="string">'stylesheet'</span>, <span class="attr">href</span>: <span class="string">'https://use.fontawesome.com/releases/v5.8.1/css/all.css'</span> &#125;,</span><br><span class="line">    <span class="comment">// 載入 bootstrap 樣式</span></span><br><span class="line">    &#123; <span class="attr">rel</span>: <span class="string">'stylesheet'</span>, <span class="attr">href</span>: <span class="string">'https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css'</span> &#125;</span><br><span class="line">  ]</span><br><span class="line">&#125;,</span><br><span class="line">css: [</span><br><span class="line">  <span class="string">'~/assets/transition.css'</span> <span class="comment">// 載入全域 css 檔</span></span><br><span class="line">],</span><br><span class="line">modules: [</span><br><span class="line">  <span class="comment">// Doc: https://axios.nuxtjs.org/usage</span></span><br><span class="line">  <span class="string">'@nuxtjs/axios'</span>,</span><br><span class="line">  <span class="string">'@nuxtjs/style-resources'</span> <span class="comment">// 載入style-resources 模組</span></span><br><span class="line">],</span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">** import sass/scss</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line">styleResources: &#123;</span><br><span class="line">  scss: [</span><br><span class="line">    <span class="string">'~/assets/scss/_mixins.scss'</span> <span class="comment">// style-resources 會在全部的.vue檔載入這支 scss</span></span><br><span class="line">  ]</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>在 pages 資料夾下新增 product.vue</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line">&lt;template lang=<span class="string">'pug'</span>&gt;</span><br><span class="line">  section.product</span><br><span class="line">    nav</span><br><span class="line">      ol.breadcrumb</span><br><span class="line">        li.breadcrumb-item</span><br><span class="line">          nuxt-link(to=<span class="string">"/"</span>) 首頁</span><br><span class="line">        li.breadcrumb-item.active 產品</span><br><span class="line">    .container</span><br><span class="line">      .row.w-100</span><br><span class="line">        template(v-for=<span class="string">"product in products"</span>)</span><br><span class="line">          .col-12.col-md-6.col-lg-4</span><br><span class="line">            Card(:product=<span class="string">"product"</span>)</span><br><span class="line">&lt;/template&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">import Card from <span class="string">'~/components/Card'</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">export</span> default &#123;</span><br><span class="line">  name: <span class="string">'Product'</span>,</span><br><span class="line">  components: &#123;</span><br><span class="line">    Card</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="function"><span class="title">data</span></span>() &#123;</span><br><span class="line">    <span class="built_in">return</span> &#123;</span><br><span class="line">      products: []</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">&lt;/script&gt;</span><br><span class="line"></span><br><span class="line">&lt;style lang=<span class="string">'scss'</span>&gt;</span><br><span class="line">.product &#123;</span><br><span class="line">  padding: 1rem 5%;</span><br><span class="line">  nav &#123;</span><br><span class="line">    max-width: 1140px;</span><br><span class="line">    padding-left: 30px;</span><br><span class="line">    padding-right: 30px;</span><br><span class="line">    margin: 0 auto;</span><br><span class="line">  &#125;</span><br><span class="line">  .row&#123;</span><br><span class="line">    margin: 0 auto;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>在 components 資料夾下新增 Card.vue</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br></pre></td><td class="code"><pre><span class="line">&lt;template lang=<span class="string">'pug'</span>&gt;</span><br><span class="line">  .card.mb-3</span><br><span class="line">    .img.card-img-top(:style=<span class="string">"showImage(product.image)"</span>)</span><br><span class="line">      label.feature 本日精選</span><br><span class="line">      transition-group(name=<span class="string">"icon"</span>)</span><br><span class="line">        i.heart.far.fa-heart(v-if=<span class="string">"!isHover"</span> @click=<span class="string">"isHover = true"</span> :key=<span class="string">"0"</span>)</span><br><span class="line">        i.heart.fas.fa-heart(v-else @click=<span class="string">"isHover = false"</span> :key=<span class="string">"1"</span>)</span><br><span class="line">    .card-body</span><br><span class="line">      .card-info</span><br><span class="line">        h6</span><br><span class="line">          span.card-title &#123;&#123; product.name &#125;&#125;</span><br><span class="line">          span.card-text &#123;&#123; product.price | currency &#125;&#125;</span><br><span class="line">      a.addToCart.btn.w-100 加入購物車</span><br><span class="line">&lt;/template&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line"><span class="built_in">export</span> default &#123;</span><br><span class="line">  name: <span class="string">'Card'</span>,</span><br><span class="line">  props: &#123;</span><br><span class="line">    product: &#123;</span><br><span class="line">      <span class="built_in">type</span>: Object,</span><br><span class="line">      required: <span class="literal">true</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="function"><span class="title">data</span></span>() &#123;</span><br><span class="line">    <span class="built_in">return</span> &#123;</span><br><span class="line">      isHover: <span class="literal">false</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  computed: &#123;</span><br><span class="line">    <span class="function"><span class="title">showImage</span></span>() &#123;</span><br><span class="line">      <span class="built_in">return</span> <span class="keyword">function</span>(url) &#123;</span><br><span class="line">        <span class="built_in">return</span> &#123; <span class="string">'background-image'</span>: `url(<span class="string">'$&#123;url&#125;'</span>)` &#125;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  filters: &#123;</span><br><span class="line">    currency(num) &#123;</span><br><span class="line">      const n = Number(num)</span><br><span class="line">      <span class="built_in">return</span> `NT.$&#123;n.toFixed(0).replace(/./g, (c, i, a) =&gt; &#123;</span><br><span class="line">        const currency = (i &amp;&amp; c !== <span class="string">'.'</span> &amp;&amp; ((a.length - i) % 3 === 0) ? `, <span class="variable">$&#123;c&#125;</span>`.replace(/\s/g, <span class="string">''</span>) : c)</span><br><span class="line">        <span class="built_in">return</span> currency</span><br><span class="line">      &#125;)&#125;元`</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  methods: &#123;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">&lt;/script&gt;</span><br><span class="line"></span><br><span class="line">&lt;style lang=<span class="string">'scss'</span>&gt;</span><br><span class="line">.card &#123;</span><br><span class="line">  .img &#123;</span><br><span class="line">    @include <span class="built_in">bg</span>(100%, 200px, cover);</span><br><span class="line">    position: relative;</span><br><span class="line">    .feature &#123;</span><br><span class="line">      background-color: <span class="variable">$color</span>-primary;</span><br><span class="line">      color: <span class="comment">#FFF;</span></span><br><span class="line">      writing-mode: vertical-lr;</span><br><span class="line">      padding: 1rem 0.5rem;</span><br><span class="line">      letter-spacing: 5px;</span><br><span class="line">      position: absolute;</span><br><span class="line">      top: -0.5rem;</span><br><span class="line">      left: 1rem;</span><br><span class="line">    &#125;</span><br><span class="line">    .heart &#123;</span><br><span class="line">      display: block;</span><br><span class="line">      background-color: <span class="comment">#FFF;</span></span><br><span class="line">      padding: 0.5rem;</span><br><span class="line">      border-bottom-left-radius: 15px;</span><br><span class="line">      position: absolute;</span><br><span class="line">      top: -1px;</span><br><span class="line">      right: -1px;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  .card-info &#123;</span><br><span class="line">    display: flex;</span><br><span class="line">    margin-bottom: 1rem;</span><br><span class="line">    h6 &#123;</span><br><span class="line">      flex: auto;</span><br><span class="line">      @include flex(center);</span><br><span class="line">      span &#123;</span><br><span class="line">        flex: 1;</span><br><span class="line">        text-align: center;</span><br><span class="line">        margin: 0;</span><br><span class="line">      &#125;</span><br><span class="line">      .card-text &#123;</span><br><span class="line">        border-left: 1px solid <span class="variable">$color</span>-primary;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  .addToCart &#123;</span><br><span class="line">    color: <span class="variable">$color</span>-secondary;</span><br><span class="line">    background-color: <span class="comment">#EAF0ED;</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>在根目錄新增 httpService 資料夾(存放 api 要用到的資料)</p>
+<blockquote>
+<p><img src="/pieda_blog/2019/04/17/nuxt-demo/api.jpg" alt="httpService資料夾"><br>_httpService.js</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> axios <span class="keyword">from</span> <span class="string">'axios'</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="function"><span class="keyword">function</span> (<span class="params">params</span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(params)</span><br><span class="line">  <span class="keyword">const</span> baseURL = <span class="string">'http://localhost:3000'</span></span><br><span class="line">  <span class="keyword">const</span> &#123; method, header, url, path, auth, data &#125; = params</span><br><span class="line">  <span class="keyword">let</span> headers = &#123;</span><br><span class="line">    <span class="string">'Accept'</span>: <span class="string">'application/json'</span>,</span><br><span class="line">    <span class="string">'Content-Type'</span>: <span class="string">'application/json;charset=utf-8'</span>,</span><br><span class="line">    ...header</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">if</span> (auth) &#123;</span><br><span class="line">    <span class="keyword">const</span> user = <span class="built_in">JSON</span>.parse(localStorage.getItem(<span class="string">'user'</span>))</span><br><span class="line">    headers = &#123;</span><br><span class="line">      ...headers,</span><br><span class="line">      <span class="string">'Authorization'</span>: user ? user.access_token : <span class="string">''</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="built_in">console</span>.log(headers)</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> axios(&#123;</span><br><span class="line">    method: method || <span class="string">'get'</span>,</span><br><span class="line">    url: url || (baseURL + path),</span><br><span class="line">    withCredentials: <span class="literal">true</span>,</span><br><span class="line">    headers,</span><br><span class="line">    data</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</blockquote>
+<blockquote>
+<p>index.js</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> productAPI <span class="keyword">from</span> <span class="string">'./product'</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> &#123;</span><br><span class="line">  productAPI</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</blockquote>
+<blockquote>
+<p>product.js</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> httpService <span class="keyword">from</span> <span class="string">'./_httpService'</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span><br><span class="line">  getProductList() &#123;</span><br><span class="line">    <span class="keyword">const</span> path = <span class="string">'/products'</span></span><br><span class="line">    <span class="keyword">return</span> httpService(&#123;</span><br><span class="line">      method: <span class="string">'get'</span>,</span><br><span class="line">      path</span><br><span class="line">    &#125;)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</blockquote>
+</li>
+<li><p>在 static 資料夾內新增 db.json</p>
+<blockquote>
+<p>db.json</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">"products"</span>: [</span><br><span class="line">    &#123;</span><br><span class="line">      <span class="attr">"id"</span>: <span class="number">0</span>,</span><br><span class="line">      <span class="attr">"name"</span>: <span class="string">"焦糖馬卡龍"</span>,</span><br><span class="line">      <span class="attr">"price"</span>: <span class="string">"450"</span>,</span><br><span class="line">      <span class="attr">"image"</span>: <span class="string">"https://bit.ly/2Dwoxd7"</span></span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">      <span class="attr">"id"</span>: <span class="number">1</span>,</span><br><span class="line">      <span class="attr">"name"</span>: <span class="string">"焦糖馬卡龍"</span>,</span><br><span class="line">      <span class="attr">"price"</span>: <span class="string">"450"</span>,</span><br><span class="line">      <span class="attr">"image"</span>: <span class="string">"https://bit.ly/2QiWeQW"</span></span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">      <span class="attr">"id"</span>: <span class="number">2</span>,</span><br><span class="line">      <span class="attr">"name"</span>: <span class="string">"焦糖馬卡龍"</span>,</span><br><span class="line">      <span class="attr">"price"</span>: <span class="string">"450"</span>,</span><br><span class="line">      <span class="attr">"image"</span>: <span class="string">"https://bit.ly/2QbVsVR"</span></span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">      <span class="attr">"id"</span>: <span class="number">3</span>,</span><br><span class="line">      <span class="attr">"name"</span>: <span class="string">"焦糖馬卡龍"</span>,</span><br><span class="line">      <span class="attr">"price"</span>: <span class="string">"1050"</span>,</span><br><span class="line">      <span class="attr">"image"</span>: <span class="string">"https://bit.ly/2zKOP7w"</span></span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">      <span class="attr">"id"</span>: <span class="number">4</span>,</span><br><span class="line">      <span class="attr">"name"</span>: <span class="string">"焦糖馬卡龍"</span>,</span><br><span class="line">      <span class="attr">"price"</span>: <span class="string">"450"</span>,</span><br><span class="line">      <span class="attr">"image"</span>: <span class="string">"https://bit.ly/2zL5jN7"</span></span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">      <span class="attr">"id"</span>: <span class="number">5</span>,</span><br><span class="line">      <span class="attr">"name"</span>: <span class="string">"焦糖馬卡龍"</span>,</span><br><span class="line">      <span class="attr">"price"</span>: <span class="string">"450"</span>,</span><br><span class="line">      <span class="attr">"image"</span>: <span class="string">"https://bit.ly/2NcDVuB"</span></span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">      <span class="attr">"id"</span>: <span class="number">6</span>,</span><br><span class="line">      <span class="attr">"name"</span>: <span class="string">"焦糖馬卡龍"</span>,</span><br><span class="line">      <span class="attr">"price"</span>: <span class="string">"1050"</span>,</span><br><span class="line">      <span class="attr">"image"</span>: <span class="string">"https://bit.ly/2xPn7Eq"</span></span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">      <span class="attr">"id"</span>: <span class="number">7</span>,</span><br><span class="line">      <span class="attr">"name"</span>: <span class="string">"焦糖馬卡龍"</span>,</span><br><span class="line">      <span class="attr">"price"</span>: <span class="string">"450"</span>,</span><br><span class="line">      <span class="attr">"image"</span>: <span class="string">"https://bit.ly/2NcDVuB"</span></span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">      <span class="attr">"id"</span>: <span class="number">8</span>,</span><br><span class="line">      <span class="attr">"name"</span>: <span class="string">"焦糖馬卡龍"</span>,</span><br><span class="line">      <span class="attr">"price"</span>: <span class="string">"450"</span>,</span><br><span class="line">      <span class="attr">"image"</span>: <span class="string">"https://bit.ly/2OUteif"</span></span><br><span class="line">    &#125;</span><br><span class="line">  ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</blockquote>
+</li>
+<li><p>在 package.json 內新增 db 的 npm 指令，並啟用 json-server</p>
+<blockquote>
+<p><img src="/pieda_blog/2019/04/17/nuxt-demo/command.jpg" alt="command"></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">// 執行 json-server(監聽 static/db.json)</span><br><span class="line">npm run db</span><br></pre></td></tr></table></figure>
+</blockquote>
+</li>
+<li><p>呼叫 api</p>
+<blockquote>
+<p>在 product.vue 中 import httpService 內的 function</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; productAPI &#125; <span class="keyword">from</span> <span class="string">'~/httpService'</span></span><br></pre></td></tr></table></figure>
+</blockquote>
+<blockquote>
+<p>在 methods 中，新增 getProducts 的 function</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">getProducts() &#123;</span><br><span class="line">  <span class="keyword">const</span> &#123; getProductList &#125; = productAPI</span><br><span class="line">  getProductList().then(<span class="function"><span class="params">res</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(res)</span><br><span class="line">    <span class="keyword">if</span> (res.status === <span class="number">200</span>) &#123;</span><br><span class="line">      <span class="keyword">this</span>.products = res.data</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</blockquote>
+<blockquote>
+<p>在 vue 的生命週期(mounted 或 created 等等)呼叫 getProducts</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">mounted() &#123;</span><br><span class="line">  <span class="keyword">this</span>.getProducts()</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</blockquote>
+</li>
+<li><p>發現原始碼與 SPA 一樣，並沒有 SSR</p>
+<blockquote>
+<p>原因是呼叫 api 取得資料的方式，仍為 CSR(Client Side Rendering) ，必須等 js 執行後，才會有畫面上的內容<br>但是，原始碼依然是空空如也(搜尋引擎爬蟲不執行 js)</p>
+</blockquote>
+</li>
+<li><p>調整 api 呼叫方式與使用 asyncData</p>
+<blockquote>
+<p>將 call api 的方式改到 Nuxt 擴充的屬性 asyncData 內執行<br>透過 async/await 的方式，將資料確實寫入 products 中，nuxt 的 node js server 才會將畫面傳給瀏覽器端顯示</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">async</span> asyncData(&#123;isDev, route, store, env, params, query, req, res, redirect, error&#125;) &#123;</span><br><span class="line">  <span class="keyword">const</span> &#123; getProductList &#125; = productAPI</span><br><span class="line">  <span class="keyword">let</span> &#123; data &#125; = <span class="keyword">await</span> getProductList()</span><br><span class="line">  <span class="keyword">return</span> &#123;</span><br><span class="line">    products: data</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</blockquote>
+<blockquote>
+<p>product.vue 最終完整程式碼</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br></pre></td><td class="code"><pre><span class="line">&lt;template lang=<span class="string">'pug'</span>&gt;</span><br><span class="line">  section.product</span><br><span class="line">    nav</span><br><span class="line">      ol.breadcrumb</span><br><span class="line">        li.breadcrumb-item</span><br><span class="line">          nuxt-link(to=<span class="string">"/"</span>) 首頁</span><br><span class="line">        li.breadcrumb-item.active 產品</span><br><span class="line">    .container</span><br><span class="line">      .row.w-100</span><br><span class="line">        template(v-for=<span class="string">"product in products"</span>)</span><br><span class="line">          .col-12.col-md-6.col-lg-4</span><br><span class="line">            Card(:product=<span class="string">"product"</span>)</span><br><span class="line">&lt;/template&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">import Card from <span class="string">'~/components/Card'</span></span><br><span class="line">import &#123; productAPI &#125; from <span class="string">'~/httpService'</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">export</span> default &#123;</span><br><span class="line">  name: <span class="string">'Product'</span>,</span><br><span class="line">  components: &#123;</span><br><span class="line">    Card</span><br><span class="line">  &#125;,</span><br><span class="line">  async asyncData(&#123;isDev, route, store, env, params, query, req, res, redirect, error&#125;) &#123;</span><br><span class="line">    const &#123; getProductList &#125; = productAPI</span><br><span class="line">    <span class="built_in">let</span> &#123; data &#125; = await getProductList()</span><br><span class="line">    <span class="built_in">return</span> &#123;</span><br><span class="line">      products: data</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="function"><span class="title">data</span></span>() &#123;</span><br><span class="line">    <span class="built_in">return</span> &#123;</span><br><span class="line">      products: []</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">&lt;/script&gt;</span><br><span class="line"></span><br><span class="line">&lt;style lang=<span class="string">'scss'</span>&gt;</span><br><span class="line">.product &#123;</span><br><span class="line">  padding: 1rem 5%;</span><br><span class="line">  nav &#123;</span><br><span class="line">    max-width: 1140px;</span><br><span class="line">    padding-left: 30px;</span><br><span class="line">    padding-right: 30px;</span><br><span class="line">    margin: 0 auto;</span><br><span class="line">  &#125;</span><br><span class="line">  .row&#123;</span><br><span class="line">    margin: 0 auto;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure>
+</blockquote>
+</li>
+<li><p>心得</p>
+<blockquote>
+<p>這是我接觸 Vue SPA 架構以來，第一次嘗試完成 SSR，原本以為會很困難，但是還好 Nuxt 已經幫我們處理大部分的功能，我們只需要把需要 SSR 的部分，在設定檔或是程式中告訴 Nuxt 就可以輕鬆達成。</p>
+<p>有了 Nuxt，製作 Vue 的專案又多了一個選項，因為 Nuxt 除了能夠幫我們製作 SSR 之外，也能將模式設定成 SPA(幾乎與 Vue-cli 所建立的專案是一樣的)，並且因為 Nuxt 幫我們擴充許多屬性，像是 SSR 需要用到的 head、asyncData 屬性，讓我們可以用原本寫 Vue 的方式，幾乎無痛上手，而且更加方便! 這也是為什麼 Nuxt 最近非常火熱的原因！!!</p>
+</blockquote>
+</li>
+</ol>
+
+    </div>
+  </div>
+  
+  
+  
+
+  
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+      <span>
+        
+          <i class="iconfont icon-06tags"></i>標籤: 
+          
+          <span class="span--tag">
+            <a href="/pieda_blog/tags/Nuxt、Vue、SSR/">
+              #Nuxt、Vue、SSR
+            </a>
+          </span>
+          
+        
+      </span>
+    </div>
+    <div class="article-meta pull-right">
+    </div>
+  </div>
+</div>
+
+
+  <aside id="sidebar">
+    <p id="sidebar-header"></p>
+    <ol id="sidebar-toc"></ol>
+  </aside>
+  <script async>setTimeout(generateToc, 10);</script>
+
+
+
+  <nav class="post-navigation">
+    
+      <div class="nav-pre">
+        <i class="iconfont icon-prev"></i>
+        上一篇:
+        <a href="/pieda_blog/2019/02/20/nuxt/" target="_self">nuxt 環境安裝及架設</a>
+      </div>
+    
+    
+  </nav>
+
+   
+
+  
+    <script defer>
+const valineAPI = (() => {
+  try {
+    AV.init("Hyq9wkH495DgNHWhDQCOfQSp-gzGzoHsz", "WaR7nrzhliHj9aVwdQzkdlGd");
+  } catch(error) {}
+  const isExist = (identity) => {
+    identity = identity || getRealPath();
+    let query = new AV.Query('Timer');
+    return new Promise((resolve, reject) => {
+      query.equalTo("identity", identity);
+      query.find().then(results => {
+        resolve(results.length > 0);
+      }, error => reject(error));
+    })
+  }
+
+  const _get = (identity) => {
+    let query = null;
+    if(identity && identity instanceof Array){
+      let querys = [];
+      for(let i = 0; i < identity.length; ++i) {
+        querys[i] = new AV.Query('Timer');
+        querys[i].equalTo('identity', identity[i]);
+      }
+      query = AV.Query.or.apply(null ,querys);
+    } else {
+      identity = identity || getRealPath();
+      query = new AV.Query("Timer");
+      query.equalTo("identity", identity);
+    }
+
+    return new Promise((resolve, reject) => {
+      query.find()
+      .then(results => resolve(results))
+      .catch(error => reject(error))
+    })
+  }
+
+  const create = (identity) => {
+    identity = identity || getRealPath();
+    return new Promise((resolve, reject) => {
+      let Todo = AV.Object.extend('Timer');
+      let todo = new Todo();
+      todo.set("times", 1);
+      todo.set("identity", identity);
+      todo.save().then(res => resolve(true), error => reject(error));
+    })
+  }
+
+  const update = (identity) => {
+    identity = identity || getRealPath();
+    return new Promise((resolve, reject) => {
+      let query = new AV.Query('Timer');
+      query.equalTo("identity", identity);
+      query.find().then(todos => {
+        todos.forEach(todo => {
+          todo.set("times", todo.attributes.times + 1);
+        });
+        return AV.Object.saveAll(todos);
+      }).then(todos => resolve(true), error => reject(error));
+    })
+  }
+
+  return {
+    isExist,
+    _get,
+    update,
+    create
+  }
+})()
+
+const calcAndWriteTimes = () => {
+  let isPost = true;
+
+  let timerAllDOM = document.querySelectorAll(".article-timer");
+
+  if(isPost) {
+    let identity = timerAllDOM[0].getAttribute("data-identity");
+    valineAPI.isExist(identity)
+    .then(exist => {
+      if(exist) {
+        return valineAPI.update(identity);
+      }
+      return new Promise(resolve => resolve(true));
+    })
+    .then( succuess => valineAPI._get(identity))
+    .then( result => timerAllDOM[0].innerText = result[0].attributes.times)
+    .catch(error => console.log(error.message))
+    return ;
+  }
+
+  let timerDOMCache = {};
+
+  for(let timerDOM of timerAllDOM) {
+    let identity = timerDOM.getAttribute("data-identity");
+    if(timerDOMCache.hasOwnProperty(identity)){
+      timerDOMCache[identity].dom.push(timerDOM);
+    }else{
+      timerDOMCache[identity] = {
+        dom: [timerDOM],
+        times: undefined
+      };
+    }
+  }
+
+  let identities = Object.keys(timerDOMCache);
+  valineAPI._get(identities).then(results => {
+    for(let result of results) {
+      let {identity, times} = result.attributes;
+      timerDOMCache[identity].times = times;
+      timerDOMCache[identity].dom.map(item => item.innerText = times);
+    }
+    for(let identity of identities) {
+      if(timerDOMCache[identity].times){
+        continue;
+      }
+      timerDOMCache[identity].dom.map(item => item.innerText = 1);
+      valineAPI.create(identity);
+    }
+  }).catch(error => console.log(error.message))
+}
+
+if(true){
+  calcAndWriteTimes();
+}
+</script>
+   
+
+</div>
+
+
+
+      <footer>
+  <p class="site-info">
+    部落格已上線&nbsp;:&nbsp;<span id="time-to-now"></span><span class="my-face">(●'◡'●)ﾉ♥</span>
+    <br>
+    Theme - <a href="https://github.com/dongyuanxin/theme-bmw">BMW</a> | Made With 💗 | Powered by <a href="https://godbmw.com/">GodBMW</a>
+    <br>
+    
+  </p>
+</footer>
+
+
+
+<script>
+const timeToNowDOM = document.querySelector("#time-to-now");
+const startTimestamp = new Date(2019, 3, 10).getTime();
+
+const updateTimeStr = () => {
+  let offset = parseInt(
+      (new Date().getTime() - startTimestamp) / 1000,
+      10
+    ),
+    day = Math.floor(offset / 86400),
+    hour = Math.floor((offset % 86400) / 3600),
+    minute = Math.floor(((offset % 86400) % 3600) / 60),
+    second = Math.floor(((offset % 86400) % 3600) % 60);
+  timeToNowDOM.innerHTML =
+    day + "天" + hour + "小時" + minute + "分鐘" + second + "秒";
+  setTimeout(updateTimeStr, 500);
+}
+
+setTimeout(updateTimeStr, 500);
+</script>
+
+
+      <div class="back-to-top hidden">
+  <span>
+    <i class="iconfont icon-60"></i><span></span>%
+  </span>
+</div>
+
+<script>
+const updateIconToTop = percent => {
+  let dom = document.querySelector(".back-to-top span span");
+  dom.innerText = percent;
+  if(percent < 1) {
+    document.querySelector(".back-to-top").className = "back-to-top hidden";
+  } else {
+    document.querySelector(".back-to-top").className = "back-to-top";
+  }
+}
+
+const handleScoll = () => {
+  let isRunning = false;
+  return () => {
+    if (isRunning) return;
+    isRunning = true;
+    window.requestAnimationFrame(timestamp => {
+      let scrollTop =
+          document.documentElement.scrollTop || document.body.scrollTop,
+        scrollHeight =
+          document.documentElement.scrollHeight ||
+          document.body.scrollHeight,
+        clientHeight =
+          document.documentElement.clientHeight ||
+          document.body.clientHeight;
+      isRunning = false;
+      if (scrollTop <= 1) {
+        updateIconToTop(0);
+        return;
+      }
+      if (scrollTop + clientHeight >= scrollHeight) {
+        updateIconToTop(100);
+      } else {
+        updateIconToTop(parseInt(
+          100 * scrollTop / (scrollHeight - clientHeight),
+          10
+        ));
+      }
+    });
+  };
+}
+
+const backToTop = () => {
+  let scrollTop =
+      document.documentElement.scrollTop || document.body.scrollTop,
+    delay = 10,
+    time = 200;
+  if (scrollTop <= 20) {
+    document.documentElement.scrollTop = 0;
+    document.body.scrollTop = 0;
+    return;
+  }
+  let step = Math.ceil(scrollTop * delay / time);
+  let timer = setInterval(() => {
+    scrollTop =
+      document.documentElement.scrollTop || document.body.scrollTop;
+    if (scrollTop - step <= 0) {
+      document.documentElement.scrollTop = 0;
+      document.body.scrollTop = 0;
+      clearInterval(timer);
+    } else {
+      document.documentElement.scrollTop = scrollTop - step;
+      document.body.scrollTop = scrollTop - step;
+    }
+  }, delay);
+}
+
+document.addEventListener("scroll", handleScoll(), false);
+
+document.querySelector(".back-to-top").addEventListener("click", backToTop, false);
+
+</script>
+
+    </div>
+
+    
+      <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML" async></script>
+<script>
+  (() => {
+    const mathjaxConfig = {
+      showProcessingMessages: false, //关闭js加载过程信息
+      messageStyle: "none", //不显示信息
+      jax: ["input/TeX", "output/HTML-CSS"],
+      tex2jax: {
+        inlineMath: [["$", "$"], ["\\(", "\\)"]], //行内公式选择符
+        displayMath: [["$$", "$$"], ["\\[", "\\]"]], //段内公式选择符
+        skipTags: ["script", "noscript", "style", "textarea", "pre", "code", "a"] //避开某些标签
+      },
+      "HTML-CSS": {
+        availableFonts: ["STIX", "TeX"], //可选字体
+        showMathMenu: false //关闭右击菜单显示
+      }
+    }
+
+    let mathjaxInterval = setInterval(() => {
+      if(!window.MathJax){
+        return;
+      }
+      window.MathJax.Hub.Config(mathjaxConfig)
+      window.MathJax.Hub.Queue(["Typeset", MathJax.Hub, document.getElementById('app')])
+
+      clearInterval(mathjaxInterval)
+    }, 10)    
+  })()
+</script>
+    
+
+    <script src="https://cdn.bootcss.com/fancybox/3.5.2/jquery.fancybox.min.js" async></script>
+<script async>
+  let fancyTimer = setInterval(function(){
+    if(!window.$){
+      return;
+    }
+    $(document).ready(function() {
+      $(".post img").each(function () {
+        if($(this).parent().get(0).tagName.toLowerCase() === "a") {
+          return;
+        }
+        // $(this).attr("data-fancybox", "gallery"); // if you add 'data-fancybox', img will display after showed
+        var element = document.createElement("a");
+        $(element).attr("data-fancybox", "gallery");
+        $(element).attr("href", $(this).attr("src"));
+        $(this).wrap(element);
+      });
+      
+      clearInterval(fancyTimer);
+    });
+  }, 10);
+</script>
+
+    
+  </body>
+
+</html>
